@@ -1,0 +1,50 @@
+attribute_dict = {'att_0': 0 , 'att_1': 1, ..., 'res_string': n-1}
+attributes = [att_0, att_1, ...]
+
+data = [[att_0, ...], [att_0, ...], ...]
+
+only do categorical stuff:
+    for category in categories
+        for value in category:
+            data_subset[value] = [datum in data if datum.category = value]
+        info_gain = calc_info_gain(data_subset)
+        if info_gain is max:
+            keep track of category
+
+    for value in category:
+        data_subset = [datum in data if datum.category = value]
+        recursion on data_subset
+
+node:
+    attribute = 'att_i'
+    split_type = 0, 1 (continuous, discreet)
+    children = node{category: node} (type 2 nodes)
+    less = node (type 1 nodes)
+    more = node (type 1 nodes)
+
+    result = 'res_string'
+
+    def distribution(self, data):
+        return distribution (as a histogram)
+
+    two types: continuous - splits on one value.
+               discreet - splits on all categories.
+
+calculate info_gain
+
+
+try:
+    sibsp = [0, 1, 2, 3, 4, >4]
+    parch = [0, 1, 2, >2]
+    port = [S, Q, C]
+
+try:
+    predict age
+
+try:
+    use age,ticket, fare -> survival
+
+try:
+    random forest:
+        each tree gets a different subset of data (with replacement!)
+        at each step, each tree randomly compares only two of the N attributes to split on.
