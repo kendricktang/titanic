@@ -3,7 +3,6 @@ from decisiontree import Node, make_tree, write_tree
 from initial_vis import make_variable_dictionary
 
 
-
 if __name__ == '__main__':
     f = file('data/train.csv', 'r')
     lines = reader(f)
@@ -22,17 +21,16 @@ if __name__ == '__main__':
                      int(line[index_pclass]),
                      int(line[index_survived])])
     f.close()
-    var_dict = {'Sex': 0, 'Pclass': 1, 'Survived': 2}  # Simplified var_dict.
+    var_dict = {'Sex': 0, 'Pclass': 1, 'Survived': 2}
 
-    root = Node()
     ind_vars = {
-        'Sex': ['male', 'female'],
-        'Pclass': [1, 2, 3]
+        ('Sex', 'discrete'): ['male', 'female'],
+        ('Pclass', 'discrete'): [1, 2, 3]
     }
     dep_vars = ['Survived', 0, 1]
     depth = 10
     root = make_tree(data, ind_vars, dep_vars, var_dict, depth)
 
-    f = file('trees/sexclass_survival_test.tree', 'w')
+    f = file('trees/sexclass_survival.tree', 'w')
     write_tree(root, f)
     f.close()

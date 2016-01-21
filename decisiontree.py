@@ -5,7 +5,11 @@ import re
 class Node(object):
 
     def __init__(self):
+        # Valid format for self.variable is:
+        # ('varname', 'discrete')
+        # ('varname', 'continuous', splitval)
         self.variable = None
+
         self.distribution = None
         self.children = {}
 
@@ -14,8 +18,28 @@ class Node(object):
         if not self.variable:
             return self.distribution
 
-        split_val = datum[var_dict[self.variable]]
-        return self.children[split_val].predict(datum, var_dict)
+        var_val = datum[var_dict[self.variable[0]]]
+        var_type = self.variable[1]
+        if var_type == 'discrete':
+            try:
+                return self.children[var_val].predict(datum, var_dict)
+            except KeyError as e:
+                print 'Warning: decision was made early (i.e. not at leaf)'
+                return self.distribution
+        elif var_type == 'continuous':
+            if var_val < self.variable[2]:
+                return self.children['less'].predict(datum, var_dict)
+            else:
+                return self.children['more'].predict(datum, var_dict)
+        else:
+            raise Exception('Invalid variable type: %s' % self.variable[2])
+
+
+    def __str__(self):
+        return '%s,%s,%s' % (
+                self.variable,
+                str(self.distribution),
+                str(self.children.keys()))
 
 
 def calc_info_gain(old_entropy, N, data_subsets, dep_var, var_dict):
@@ -40,7 +64,8 @@ def calc_entropy(data, var_info, var_dict):
     )
 
 
-def calc_distribution(data, dep_var, var_dict):
+def calc_distribution(
+        data, dep_var, var_dict):
     """
     dep_var is of the form: ['name_of_var', val_0, val_1, ...] where val_i
     is a possible value that 'name_of_var' can take.
@@ -68,7 +93,7 @@ def calc_distribution(data, dep_var, var_dict):
 
 def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
     """
-    Recursive method used to build a decision tree.
+    Depth-first Recursive method used to build a decision tree.
 
     dep_var is of the form: ['name_of_var', val_0, val_1, ...] where val_i
     is a possible value that 'name_of_var' can take.
@@ -100,18 +125,46 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
     n = len(data)
 
     # Calculate the information gain for each independent variable
-    for var in ind_vars.keys():
-        values = ind_vars[var]
-        data_subsets = {
-            value: [
-                datum for datum in data if datum[var_dict[var]] == value]
-            for value in values}
-        info_gain = calc_info_gain(entropy, n, data_subsets, dep_var, var_dict)
-        if info_gain > max_info_gain:
-            max_info_gain = info_gain
-            next_data = data_subsets
-            next_variable = var
-            next_values = values
+    for ind_var in ind_vars.keys():
+        var = ind_var[0]
+        var_type = ind_var[1]
+
+        if var_type == 'discrete':
+            values = ind_vars[ind_var]
+            data_subsets = {
+                value: [
+                    datum for datum in data if datum[var_dict[var]] == value]
+                for value in values}
+            info_gain = calc_info_gain(
+                    entropy, n, data_subsets, dep_var, var_dict)
+            if info_gain > max_info_gain:
+                max_info_gain = info_gain
+                next_data = data_subsets
+                next_variable = (var, var_type)
+        elif var_type == 'continuous':
+            # First get all possible values:
+            values = set()
+            for datum in data:
+                values.add(datum[var_dict[var]])
+
+            # For each value in values, check info gain when split on that
+            # value
+            for value in values:
+                data_subsets = {
+                    'less': [datum for datum in data if datum[
+                        var_dict[var]] < value],
+                    'more': [datum for datum in data if datum[
+                        var_dict[var]] >= value]
+                }
+                info_gain = calc_info_gain(
+                        entropy, n, data_subsets, dep_var, var_dict)
+                if info_gain > max_info_gain:
+                    max_info_gain = info_gain
+                    next_data = data_subsets
+                    next_variable = (var, var_type, value)
+        else:
+            print ind_var
+            raise Exception('Invalid variable type: %s' % var_type)
 
     # If there is no information gain, end here
     if max_info_gain == 0:
@@ -120,11 +173,17 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
     # Using the independent variable with the most information gain,
     # recursively set this node's decision variable and its children.
     # If there's only one value left, then just stop here.
-    if len([data_subset for data_subset in next_data.values() if data_subset]) < 2:
-        print 'hello'
+
+    # If there's less than two data subsets, return a leaf node. 
+    if len(
+            [data_subset for data_subset in next_data.values() 
+                if data_subset]) < 2:
         return node
+
+    # Using the independent variable with the most info gained, update the 
+    # current node's decision variable and recursively build its children.
     node.variable = next_variable
-    for value in next_values:
+    for value in next_data.keys():
         node.children[value] = make_tree(
             next_data[value],
             ind_vars,
@@ -132,6 +191,7 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
             var_dict,
             remaining_depth - 1)
 
+    # After building children, return tree.
     return node
 
 def write_tree(node, f):
@@ -142,18 +202,14 @@ def write_tree(node, f):
         if not node.children[key]:
             node.children.pop(key)
 
-    f.write('%s,%s,%s\n' % (
-            node.variable,
-            str(node.distribution),
-            str(node.children.keys()))
-    )
+    f.write('%s\n' % str(node))
 
     for child in node.children.values():
         write_tree(child, f)
 
 
 def read_tree(filename):
-    pat = re.compile('([^,]*),({[^{}]*}),(\[[^\[\]]*\])')
+    pat = re.compile('(None|\([^\)]*\)),({[^{}]*}),(\[[^\[\]]*\])')
     f = file(filename, 'r')
     root = Node()
 
@@ -162,7 +218,7 @@ def read_tree(filename):
     data = data.groups()
 
     # Set the root's variable and distribution
-    root.variable = data[0]
+    exec('root.variable = %s' % data[0])
     exec('root.distribution = %s' % data[1])
 
     # Recursively build children
@@ -187,10 +243,7 @@ def read_tree_helper(f, pat):
     data = data.groups()
 
     # Set the root's variable and distribution
-    if data[0] == 'None':
-        node.variable = None
-    else:
-        node.variable = data[0]
+    exec('node.variable = %s' % data[0])
     exec('node.distribution = %s' % data[1])
 
     # Recursively build children
