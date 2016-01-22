@@ -27,7 +27,7 @@ if __name__ == '__main__':
         ('Sex', 'discrete'): ['male', 'female'],
         ('Pclass', 'discrete'): [1, 2, 3]
     }
-    dep_vars = ['Survived', 0, 1]
+    dep_vars = ['Survived', 'discrete', 0, 1]
     depth = 10
     root = make_tree(data, ind_vars, dep_vars, var_dict, depth)
 

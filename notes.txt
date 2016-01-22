@@ -1,14 +1,11 @@
-only do categorical stuff:
-    for category in categories
-        for value in category:
-            data_subset[value] = [datum in data if datum.category = value]
-        info_gain = calc_info_gain(data_subset)
-        if info_gain is max:
-            keep track of category
+calc info gain
+    discrete
+        just calculate info.
 
-    for value in category:
-        data_subset = [datum in data if datum.category = value]
-        recursion on data_subset
+    continuous
+        for each bi-partition, calculate info.
+        pick best one and return value.
+
 
 node:
     attribute = (var_name, var_type)
@@ -20,7 +17,10 @@ node:
     def distribution(self, data):
         return distribution (as a histogram)
 
-Now I need a way to predict continuous data.
+Now I need a way to predict continuous data -> use piecewise-constant approach.
+    entropy gets replaced with variance.
+    info gain is variance of parent set - sum(weight_i * v_i) for all i in children set
+Look into cross-validation, pruning, etc.
 
 try:
     predict age
