@@ -1,5 +1,5 @@
 from csv import reader
-from decisiontree import Node, make_tree, write_tree
+from decisiontree import make_tree, write_tree
 from initial_vis import make_variable_dictionary
 
 
@@ -28,7 +28,7 @@ if __name__ == '__main__':
             int(line[index_parch]),
             line[index_embarked],
             int(line[index_survived])
-    ])
+        ])
     f.close()
 
     var_dict = {

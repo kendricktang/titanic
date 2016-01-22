@@ -1,5 +1,5 @@
 from csv import reader
-from decisiontree import Node, make_tree, write_tree
+from decisiontree import make_tree, write_tree
 from initial_vis import make_variable_dictionary
 
 

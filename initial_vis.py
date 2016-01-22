@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from csv import reader
 
+
 def plot_bar_set(dataset, subplot, keys=None):
     """
     Given a data dictionary, where each key points to survival data,
@@ -32,6 +33,7 @@ def plot_bar_set(dataset, subplot, keys=None):
         ax.bar(ticks, dataset[key], width)
         subplot += 1
 
+
 def make_variable_dictionary(variables):
     """
     Given an array of variables, returns a dictionary that maps
@@ -51,7 +53,6 @@ def add_to_data(data, key, survived):
     if key not in data.keys():
         data[key] = [0, 0]
     data[key][survived] += 1
-
 
 
 def read_csv(filename):

@@ -1,7 +1,6 @@
 from csv import reader
-from decisiontree import Node, make_tree, write_tree
+from decisiontree import make_tree, write_tree
 from initial_vis import make_variable_dictionary
-
 
 
 if __name__ == '__main__':
@@ -26,7 +25,7 @@ if __name__ == '__main__':
                      int(line[index_survived]),
                      line[index_age]])
     f.close()
-    var_dict = {'Sex': 0, 'Pclass': 1, 'Title':2, 'Survived': 3, 'Age':4}
+    var_dict = {'Sex': 0, 'Pclass': 1, 'Title': 2, 'Survived': 3, 'Age': 4}
 
     ind_vars = {
         ('Sex', 'discrete'): ['male', 'female'],

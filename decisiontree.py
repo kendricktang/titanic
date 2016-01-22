@@ -12,7 +12,7 @@ class Node(object):
             ('varname', 'continuous', splitval).
             This field contains information about what variable this tree
             uses to make a decision, and how it makes it.
-        
+
         distribution:
             if target variable is discrete, this is a dictionary which
             maps target values to their probability.
@@ -36,7 +36,6 @@ class Node(object):
         self.distribution = None
         self.children = {}
 
-
     def predict(self, datum, var_dict):
         """
         Given a data point, the tree is walked until a decision is made,
@@ -52,7 +51,7 @@ class Node(object):
         if var_type == 'discrete':
             try:
                 return self.children[var_val].predict(datum, var_dict)
-            except KeyError as e:
+            except KeyError:
                 print 'Warning: decision was made early (i.e. not at leaf)'
                 return self.distribution
         elif var_type == 'continuous':
@@ -62,7 +61,6 @@ class Node(object):
                 return self.children['more'].predict(datum, var_dict)
         else:
             raise Exception('Invalid variable type: %s' % self.variable[2])
-
 
     def __str__(self):
         return '%s,%s,%s' % (
@@ -96,7 +94,7 @@ def calc_entropy(data, var_info, var_dict):
 def calc_distribution(data, dep_var, var_dict):
     """
     If the target variable is discrete, this method returns a dictionary which
-    maps each value that the dependent variable can take to the probabilty that 
+    maps each value that the dependent variable can take to the probabilty that
     the value can occur.
 
     If the target variable is continuous, this method returns a 2-tuple which
@@ -163,10 +161,12 @@ def check_singleton(distribution):
 
     if type(distribution) == tuple:  # continuous target variable
         variance = distribution[1]
-        if variance < epsilon: return True
+        if variance < epsilon:
+            return True
     elif type(distribution) == dict:  # discrete target variable
         for value in distribution.values():
-            if value > 1 - epsilon: return True
+            if value > 1 - epsilon:
+                return True
     else:
         raise Exception('Invalid distribution: %s' % str(distribution))
 
@@ -186,7 +186,8 @@ def partition_data(data, var, var_type, var_vals, var_dict):
         # Simply partition by the discrete variable. Keys in subset are values
         # and they map to a single subset.
         for value in var_vals:
-            subsets[value] = [datum for datum in data if datum[var_dict[var]] == value]
+            subsets[value] = [
+                datum for datum in data if datum[var_dict[var]] == value]
     elif var_type == 'continuous':
         # For each variable value, partition into a less-than and a
         # greater-than set. Keys in subset are values and they map to a
@@ -223,7 +224,7 @@ def calc_information(data, dep_var, var_dict):
         return calc_entropy(data, dep_var, var_dict)
 
     elif dep_var_type == 'continuous':  # return variance
-        dep_var_data = np.array([datum[var_dict[depvar]] for datum in data])
+        dep_var_data = np.array([datum[var_dict[dep_var]] for datum in data])
         return dep_var_data.var()
 
     else:
@@ -287,7 +288,8 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
     """
     # Check for early termination before doing anything else
     early_term = early_termination_pre(data, remaining_depth)
-    if early_term: return None
+    if early_term:
+        return None
 
     # Get information about the current data and store it in node.
     node = Node()
@@ -326,9 +328,10 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
 
     # Check for early termination after looking at potential splits
     early_term = early_termination_post(max_info_gain, next_data)
-    if early_term: return node
+    if early_term:
+        return node
 
-    # Using the independent variable with the most info gained, update the 
+    # Using the independent variable with the most info gained, update the
     # current node's decision variable and recursively build its children.
     node.variable = variable
     for value in next_data.keys():
@@ -384,12 +387,12 @@ def read_tree_helper(f, pat):
     data = data.groups()
 
     # Set the root's variable and distribution
-    exec('node.variable = %s' % data[0])
-    exec('node.distribution = %s' % data[1])
+    node.variable = eval(data[0])
+    node.distribution = eval(data[1])
 
     # Recursively build children
     node.children = {}
-    exec('children_keys = %s' % data[2])
+    children_keys = eval(data[2])
     for key in children_keys:
         node.children[key] = read_tree_helper(f, pat)
     return node

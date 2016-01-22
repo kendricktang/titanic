@@ -3,13 +3,14 @@ from csv import reader
 import string
 import sys
 
+
 if __name__ == '__main__':
     try:
         filename = sys.argv[1]
     except IndexError as e:
         print '%s: You need to input a file name.' % e
         raise
- 
+
     f = file('data/%s.csv' % filename, 'r')
     f_out = file('data/%s_titles.csv' % filename, 'w')
     lines = reader(f)
