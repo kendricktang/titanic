@@ -125,14 +125,19 @@ def calc_distribution(data, dep_var, var_dict):
         raise Exception('Invalid variable type: %s' % dep_var_type)
 
 
-def early_termination_pre(data, remaining_depth):
+def early_termination_pre(data, remaining_depth, original_data_size):
     """
     Early termination check before looking at splits
     """
+    min_data_proportion = 0.01
+
     if remaining_depth == 0:
         return True
 
     if not data:
+        return True
+
+    if float(len(data)) / original_data_size < min_data_proportion:
         return True
 
     return False
@@ -199,10 +204,10 @@ def partition_data(data, var, var_type, var_vals, var_dict):
             var_vals.add(datum[var_dict[var]])
 
         for value in var_vals:
-            subsets[value] = (
-                    [datum for datum in data if datum[var_dict[var]] < value],
-                    [datum for datum in data if datum[var_dict[var]] >= value],
-                    )
+            subsets[value] = ({
+                'less': [datum for datum in data if datum[var_dict[var]] < value],
+                'more': [datum for datum in data if datum[var_dict[var]] >= value],
+            })
     else:
         raise Exception('Invalid variable type: %s' % var_type)
 
@@ -224,7 +229,8 @@ def calc_information(data, dep_var, var_dict):
         return calc_entropy(data, dep_var, var_dict)
 
     elif dep_var_type == 'continuous':  # return variance
-        dep_var_data = np.array([datum[var_dict[dep_var]] for datum in data])
+        dep_arr = [datum[var_dict[dep_var[0]]] for datum in data]
+        dep_var_data = np.array(dep_arr)
         return dep_var_data.var()
 
     else:
@@ -240,6 +246,7 @@ def calc_information_of_partition(N, data_subsets, dep_var, var_dict):
     variable type.
     """
     information = 0
+    dep_var_type = dep_var[1]
     for subset in data_subsets.values():
         information += calc_information(
             subset, dep_var, var_dict) * len(subset) / float(N)
@@ -264,6 +271,7 @@ def calc_information_gain(
         splitval = None
     elif var_type == 'continuous':
         max_info_gain = 0
+        splitval = None
         for curr_splitval in subsets.keys():
             new_info = calc_information_of_partition(
                     N, subsets[curr_splitval], dep_var, var_dict)
@@ -278,7 +286,9 @@ def calc_information_gain(
     return info_gain, splitval
 
 
-def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
+def make_tree(
+        data, ind_vars, dep_var, var_dict,
+        remaining_depth, original_data_size):
     """
     Depth first recursive method used to build a decision tree.
 
@@ -287,7 +297,8 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
     Check early_termination_pre/post methods for other termination situations.
     """
     # Check for early termination before doing anything else
-    early_term = early_termination_pre(data, remaining_depth)
+    early_term = early_termination_pre(
+            data, remaining_depth, original_data_size)
     if early_term:
         return None
 
@@ -295,9 +306,6 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
     node = Node()
     node.distribution = calc_distribution(data, dep_var, var_dict)
     information = calc_information(data, dep_var, var_dict)
-
-    # Check for early termination before looking at potential splits.
-    # singleton = check_singleton(node.distribution)
 
     # Calculate the information gain for each independent variable
     max_info_gain = 0
@@ -340,7 +348,8 @@ def make_tree(data, ind_vars, dep_var, var_dict, remaining_depth):
             ind_vars,
             dep_var,
             var_dict,
-            remaining_depth - 1)
+            remaining_depth - 1,
+            original_data_size)
 
     # After building children, return tree.
     return node
@@ -364,7 +373,7 @@ def read_tree(filename):
     """
     Recursively builds and returns the decision tree contained in 'filename'.
     """
-    pat = re.compile('(None|\([^\)]*\)),({[^{}]*}),(\[[^\[\]]*\])')
+    pat = re.compile('(None|\([^\)]*\)),(\([^\[\]]*\)|{[^{}]*}),(\[[^\[\]]*\])')
     f = file(filename, 'r')
     root = read_tree_helper(f, pat)
     f.close

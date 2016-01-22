@@ -15,19 +15,21 @@ if __name__ == '__main__':
     index_sibsp = var_dict['SibSp']
     index_parch = var_dict['Parch']
     index_embarked = var_dict['Embarked']
-    index_survived = var_dict['Survived']
+    index_age = var_dict['Age']
 
+    # Only grab data with Age recorded.
     data = []
     for line in lines:
-        data.append([
-            line[index_sex],
-            int(line[index_pclass]),
-            line[index_title],
-            int(line[index_sibsp]),
-            int(line[index_parch]),
-            line[index_embarked],
-            int(line[index_survived])
-        ])
+        if line[index_age]:
+            data.append([
+                line[index_sex],
+                int(line[index_pclass]),
+                line[index_title],
+                int(line[index_sibsp]),
+                int(line[index_parch]),
+                line[index_embarked],
+                float(line[index_age])
+            ])
     f.close()
 
     var_dict = {
@@ -37,7 +39,7 @@ if __name__ == '__main__':
         'SibSp': 3,
         'Parch': 4,
         'Embarked': 5,
-        'Survived': 6
+        'Age': 6
     }
 
     ind_vars = {
@@ -45,14 +47,12 @@ if __name__ == '__main__':
         ('Pclass', 'discrete'): [1, 2, 3],
         ('Title', 'discrete'): [
             'Mr', 'Master', 'Mrs', 'Miss', 'Rev', 'Dr', 'Col', ''],
-        ('SibSp', 'continuous'): None,
-        ('Parch', 'continuous'): None,
         ('Embarked', 'discrete'): ['S', 'C', 'Q']
     }
-    dep_vars = ['Survived', 'discrete', 0, 1]
-    depth = 4
+    dep_vars = ['Age', 'continuous']
+    depth = 10
     root = make_tree(data, ind_vars, dep_vars, var_dict, depth, len(data))
 
-    f = file('trees/simple_survival.tree', 'w')
+    f = file('trees/simple_age.tree', 'w')
     write_tree(root, f)
     f.close()

@@ -37,6 +37,6 @@ if __name__ == '__main__':
     depth = 10
     root = make_tree(data, ind_vars, dep_vars, var_dict, depth)
 
-    f = file('trees/sexclasstitle_survival_test.tree', 'w')
+    f = file('trees/sexclasstitle_survival.tree', 'w')
     write_tree(root, f)
     f.close()
