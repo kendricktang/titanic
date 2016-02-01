@@ -8,18 +8,18 @@ class Node(object):
     A Node object used for decision trees.
     Three fields:
         variable:
-            valid formats are ('varname', 'discrete') or
+            valid formats are ('varname', 'categorical') or
             ('varname', 'continuous', splitval).
             This field contains information about what variable this tree
             uses to make a decision, and how it makes it.
 
         distribution:
-            if target variable is discrete, this is a dictionary which
+            if target variable is categorical, this is a dictionary which
             maps target values to their probability.
             if target variable is continuous, this is a 2-tuple (mu, SSE).
 
         children:
-            if variable is discrete, this is a dictionary which maps
+            if variable is categorical, this is a dictionary which maps
             variable values to their nodes.
             if variable is continuous, this is a dictionary which has two
             keys: less, and more. They point to the nodes corresponding
@@ -29,7 +29,7 @@ class Node(object):
 
     def __init__(self):
         # Valid format for self.variable is:
-        # ('varname', 'discrete')
+        # ('varname', 'categorical')
         # ('varname', 'continuous', splitval)
         self.variable = None
 
@@ -48,7 +48,7 @@ class Node(object):
 
         var_val = datum[var_dict[self.variable[0]]]
         var_type = self.variable[1]
-        if var_type == 'discrete':
+        if var_type == 'categorical':
             try:
                 return self.children[var_val].predict(datum, var_dict)
             except KeyError:
@@ -56,9 +56,17 @@ class Node(object):
                 return self.distribution
         elif var_type == 'continuous':
             if var_val < self.variable[2]:
-                return self.children['less'].predict(datum, var_dict)
+                try:
+                    return self.children['less'].predict(datum, var_dict)
+                except AttributeError:
+                    print 'Warning: decision was made early (i.e. not at leaf)'
+                    return self.distribution
             else:
-                return self.children['more'].predict(datum, var_dict)
+                try:
+                    return self.children['more'].predict(datum, var_dict)
+                except AttributeError:
+                    print 'Warning: decision was made early (i.e. not at leaf)'
+                    return self.distribution
         else:
             raise Exception('Invalid variable type: %s' % self.variable[2])
 
@@ -71,8 +79,8 @@ class Node(object):
 
 def calc_entropy(data, var_info, var_dict):
     """
-    Assumes target variable is a discrete type. Returns the entropy of
-    the data with respect to the discrete target variable.
+    Assumes target variable is a categorical type. Returns the entropy of
+    the data with respect to the categorical target variable.
     """
     var = var_info[0]
     var_values = var_info[2:]
@@ -91,25 +99,25 @@ def calc_entropy(data, var_info, var_dict):
     )
 
 
-def calc_distribution(data, dep_var, var_dict):
+def calc_distribution(data, targ_var, var_dict):
     """
-    If the target variable is discrete, this method returns a dictionary which
-    maps each value that the dependent variable can take to the probabilty that
-    the value can occur.
+    If the target variable is categorical, this method returns a dictionary
+    which maps each value that the dependent variable can take to the
+    probabilty that the value can occur.
 
     If the target variable is continuous, this method returns a 2-tuple which
     contains the (mean, variance) of the target variable.
     """
-    var = dep_var[0]
-    dep_var_type = dep_var[1]
+    var = targ_var[0]
+    targ_var_type = targ_var[1]
     N = len(data)
     if N == 0:
         return 0
 
-    if dep_var_type == 'discrete':
-        dep_var_values = dep_var[2:]
+    if targ_var_type == 'categorical':
+        targ_var_values = targ_var[2:]
         distribution = {}
-        for value in dep_var_values:
+        for value in targ_var_values:
             distribution[value] = (
                 len(
                     [datum for datum in data if datum[var_dict[var]] == value]
@@ -117,37 +125,33 @@ def calc_distribution(data, dep_var, var_dict):
             )
         return distribution
 
-    elif dep_var_type == 'continuous':
-        dep_var_data = np.array([datum[var_dict[var]] for datum in data])
-        return (dep_var_data.mean(), dep_var_data.var())
+    elif targ_var_type == 'continuous':
+        targ_var_data = np.array([datum[var_dict[var]] for datum in data])
+        return (targ_var_data.mean(), targ_var_data.var())
 
     else:
-        raise Exception('Invalid variable type: %s' % dep_var_type)
+        raise Exception('Invalid variable type: %s' % targ_var_type)
 
 
-def early_termination_pre(data, remaining_depth, original_data_size):
+def early_termination_pre(data, remaining_depth):
     """
     Early termination check before looking at splits
     """
-    min_data_proportion = 0.01
-
     if remaining_depth == 0:
         return True
 
     if not data:
         return True
 
-    if float(len(data)) / original_data_size < min_data_proportion:
-        return True
-
     return False
 
 
-def early_termination_post(max_info_gain, next_data):
+def early_termination_post(next_data):
     """
     Early termination check after looking at splits
     """
-    if max_info_gain == 0:
+
+    if not next_data:
         return True
 
     if len(
@@ -168,7 +172,7 @@ def check_singleton(distribution):
         variance = distribution[1]
         if variance < epsilon:
             return True
-    elif type(distribution) == dict:  # discrete target variable
+    elif type(distribution) == dict:  # categorical target variable
         for value in distribution.values():
             if value > 1 - epsilon:
                 return True
@@ -180,23 +184,24 @@ def check_singleton(distribution):
 
 def partition_data(data, var, var_type, var_vals, var_dict):
     """
-    If variable type is discrete, then data is partitioned by variable values
-    and a single partition is returned.
+    If variable type is categorical, then data is partitioned by variable
+    values and a single partition is returned.
 
     If variable type is continuous, then for each variable value, data is
     partitioned into two subsets, and the set of partitions is returned.
     """
     subsets = {}
-    if var_type == 'discrete':
-        # Simply partition by the discrete variable. Keys in subset are values
-        # and they map to a single subset.
+    if var_type == 'categorical':
+        # Simply partition by the categorical variable. Keys in subset are
+        # values and they map to a single subset.
         for value in var_vals:
             subsets[value] = [
                 datum for datum in data if datum[var_dict[var]] == value]
     elif var_type == 'continuous':
         # For each variable value, partition into a less-than and a
         # greater-than set. Keys in subset are values and they map to a
-        # partition of data. This is much bigger than for discrete variables.
+        # partition of data. This is much bigger than for categorical
+        # variables.
 
         # Get values:
         var_vals = set()
@@ -205,8 +210,10 @@ def partition_data(data, var, var_type, var_vals, var_dict):
 
         for value in var_vals:
             subsets[value] = ({
-                'less': [datum for datum in data if datum[var_dict[var]] < value],
-                'more': [datum for datum in data if datum[var_dict[var]] >= value],
+                'less': [
+                    datum for datum in data if datum[var_dict[var]] < value],
+                'more': [
+                    datum for datum in data if datum[var_dict[var]] >= value],
             })
     else:
         raise Exception('Invalid variable type: %s' % var_type)
@@ -214,30 +221,30 @@ def partition_data(data, var, var_type, var_vals, var_dict):
     return subsets
 
 
-def calc_information(data, dep_var, var_dict):
+def calc_information(data, targ_var, var_dict):
     """
     Calculate the information of a data set.
-    If target variable is discrete, the information is entropy.
+    If target variable is categorical, the information is entropy.
     If target variable is continuous, the information is variance.
     """
     if not data:
         return 0
 
     # get entropy or variance, depending on the target variable type
-    dep_var_type = dep_var[1]
-    if dep_var_type == 'discrete':  # return entropy
-        return calc_entropy(data, dep_var, var_dict)
+    targ_var_type = targ_var[1]
+    if targ_var_type == 'categorical':  # return entropy
+        return calc_entropy(data, targ_var, var_dict)
 
-    elif dep_var_type == 'continuous':  # return variance
-        dep_arr = [datum[var_dict[dep_var[0]]] for datum in data]
-        dep_var_data = np.array(dep_arr)
-        return dep_var_data.var()
+    elif targ_var_type == 'continuous':  # return variance
+        dep_arr = [datum[var_dict[targ_var[0]]] for datum in data]
+        targ_var_data = np.array(dep_arr)
+        return targ_var_data.var()
 
     else:
-        raise Exception('Invalid variable type: %s' % dep_var_type)
+        raise Exception('Invalid variable type: %s' % targ_var_type)
 
 
-def calc_information_of_partition(N, data_subsets, dep_var, var_dict):
+def calc_information_of_partition(N, data_subsets, targ_var, var_dict):
     """
     Calculates the information of a partition, which is the weighted
     sum of the information of each subset.
@@ -246,27 +253,27 @@ def calc_information_of_partition(N, data_subsets, dep_var, var_dict):
     variable type.
     """
     information = 0
-    dep_var_type = dep_var[1]
+    targ_var_type = targ_var[1]
     for subset in data_subsets.values():
         information += calc_information(
-            subset, dep_var, var_dict) * len(subset) / float(N)
+            subset, targ_var, var_dict) * len(subset) / float(N)
     return information
 
 
 def calc_information_gain(
-        information, N, subsets, var_type, dep_var, var_dict):
+        information, N, subsets, var_type, targ_var, var_dict):
     """
     For each partition in subsets, the information gain is calculated.
 
-    If var_type is discrete, there is only one partition.
+    If var_type is categorical, there is only one partition.
     If var_type is continuous, there are multiple partitions. The value which
     maps to the partition with the best information gain is returned as
     splitval.
     """
 
-    if var_type == 'discrete':
+    if var_type == 'categorical':
         new_information = calc_information_of_partition(
-                N, subsets, dep_var, var_dict)
+                N, subsets, targ_var, var_dict)
         info_gain = information - new_information
         splitval = None
     elif var_type == 'continuous':
@@ -274,7 +281,7 @@ def calc_information_gain(
         splitval = None
         for curr_splitval in subsets.keys():
             new_info = calc_information_of_partition(
-                    N, subsets[curr_splitval], dep_var, var_dict)
+                    N, subsets[curr_splitval], targ_var, var_dict)
             info_gain = information - new_info
             if info_gain > max_info_gain:
                 max_info_gain = info_gain
@@ -287,7 +294,7 @@ def calc_information_gain(
 
 
 def make_tree(
-        data, ind_vars, dep_var, var_dict,
+        data, ind_vars, targ_var, var_dict,
         remaining_depth, original_data_size):
     """
     Depth first recursive method used to build a decision tree.
@@ -298,14 +305,14 @@ def make_tree(
     """
     # Check for early termination before doing anything else
     early_term = early_termination_pre(
-            data, remaining_depth, original_data_size)
+            data, remaining_depth)
     if early_term:
         return None
 
     # Get information about the current data and store it in node.
     node = Node()
-    node.distribution = calc_distribution(data, dep_var, var_dict)
-    information = calc_information(data, dep_var, var_dict)
+    node.distribution = calc_distribution(data, targ_var, var_dict)
+    information = calc_information(data, targ_var, var_dict)
 
     # Calculate the information gain for each independent variable
     max_info_gain = 0
@@ -321,7 +328,7 @@ def make_tree(
 
         # Calculate information gained
         info_gain, splitval = calc_information_gain(
-            information, N, data_subsets, var_type, dep_var, var_dict)
+            information, N, data_subsets, var_type, targ_var, var_dict)
 
         # Update max information and related state variables
         if info_gain > max_info_gain:
@@ -330,12 +337,12 @@ def make_tree(
             if var_type == 'continuous':
                 variable = (ind_var[0], ind_var[1], splitval)
                 data_subsets = data_subsets[splitval]
-            elif var_type == 'discrete':
+            elif var_type == 'categorical':
                 variable = ind_var
             next_data = data_subsets
 
     # Check for early termination after looking at potential splits
-    early_term = early_termination_post(max_info_gain, next_data)
+    early_term = early_termination_post(next_data)
     if early_term:
         return node
 
@@ -346,7 +353,7 @@ def make_tree(
         node.children[value] = make_tree(
             next_data[value],
             ind_vars,
-            dep_var,
+            targ_var,
             var_dict,
             remaining_depth - 1,
             original_data_size)
