@@ -1,8 +1,3 @@
-attribute_dict = {'att_0': 0 , 'att_1': 1, ..., 'res_string': n-1}
-attributes = [att_0, att_1, ...]
-
-data = [[att_0, ...], [att_0, ...], ...]
-
 only do categorical stuff:
     for category in categories
         for value in category:
@@ -16,27 +11,16 @@ only do categorical stuff:
         recursion on data_subset
 
 node:
-    attribute = 'att_i'
-    split_type = 0, 1 (continuous, discreet)
-    children = node{category: node} (type 2 nodes)
-    less = node (type 1 nodes)
-    more = node (type 1 nodes)
+    attribute = (var_name, var_type)
+    children = {var_value: node}
+        or {left: node, right: node}
 
     result = 'res_string'
 
     def distribution(self, data):
         return distribution (as a histogram)
 
-    two types: continuous - splits on one value.
-               discreet - splits on all categories.
-
-calculate info_gain
-
-
-try:
-    sibsp = [0, 1, 2, 3, 4, >4]
-    parch = [0, 1, 2, >2]
-    port = [S, Q, C]
+Now I need a way to predict continuous data.
 
 try:
     predict age

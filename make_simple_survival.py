@@ -3,21 +3,21 @@ from decisiontree import Node, make_tree, write_tree
 from initial_vis import make_variable_dictionary
 
 
-
 if __name__ == '__main__':
     f = file('data/train_titles.csv', 'r')
     lines = reader(f)
     variables = lines.next()
     var_dict = make_variable_dictionary(variables)
 
-    # Still only interested in Sex, Pclass, and Survived.
     index_sex = var_dict['Sex']
     index_pclass = var_dict['Pclass']
     index_title = var_dict['Title']
-    index_age = var_dict['Age']
+    index_sibsp = var_dict['SibSp']
+    index_parch = var_dict['Parch']
+    index_embarked = var_dict['Embarked']
     index_survived = var_dict['Survived']
 
-    # Gather (sex, pclass, survived) data from f
+    # Gather data from file, only keeping relevant information
     data = []
     for line in lines:
         data.append([
@@ -26,7 +26,8 @@ if __name__ == '__main__':
             line[index_title],
             int(line[index_sibsp]),
             int(line[index_parch]),
-            line[index_embarked]
+            line[index_embarked],
+            int(line[index_survived])
     ])
     f.close()
 
@@ -36,25 +37,21 @@ if __name__ == '__main__':
         'Title': 2,
         'SibSp': 3,
         'Parch': 4,
-        'Embarked': 5
+        'Embarked': 5,
+        'Survived': 6
     }
 
-    root = Node()
     ind_vars = {
-        'Sex': [lambda x: x == val for val in ['male', 'female']],
-        'Pclass': [lambda x: x == val for val in [1, 2, 3]],
-        'Title': [
-            lambda x: x == val for val in [
-                'Mr', 'Master', 'Mrs', 'Miss', 'Rev', 'Dr', 'Col', '']],
-        'SibSp': (
-            [lambda x: x == val for val in [0, 1, 2, 3, 4]] +
-            [lambda x: x>4]),
-        'Parch': (
-            [lambda x: x== val for val in [0, 1, 2]] + [lambda x: x>2]),
-        'Embarked': [lambda x: x == val for val in ['S', 'C', 'Q']]
+        ('Sex', 'discrete'): ['male', 'female'],
+        ('Pclass', 'discrete'): [1, 2, 3],
+        ('Title', 'discrete'): [
+            'Mr', 'Master', 'Mrs', 'Miss', 'Rev', 'Dr', 'Col', ''],
+        ('SibSp', 'continuous'): None,
+        ('Parch', 'continuous'): None,
+        ('Embarked', 'discrete'): ['S', 'C', 'Q']
     }
     dep_vars = ['Survived', 0, 1]
-    depth = 10
+    depth = 4
     root = make_tree(data, ind_vars, dep_vars, var_dict, depth)
 
     f = file('trees/discrete_survival.tree', 'w')

@@ -28,11 +28,11 @@ if __name__ == '__main__':
     f.close()
     var_dict = {'Sex': 0, 'Pclass': 1, 'Title':2, 'Survived': 3, 'Age':4}
 
-    root = Node()
     ind_vars = {
-        'Sex': ['male', 'female'],
-        'Pclass': [1, 2, 3],
-        'Title': ['Mr', 'Master', 'Mrs', 'Miss', 'Rev', 'Dr', 'Col', '']
+        ('Sex', 'discrete'): ['male', 'female'],
+        ('Pclass', 'discrete'): [1, 2, 3],
+        ('Title', 'discrete'): [
+            'Mr', 'Master', 'Mrs', 'Miss', 'Rev', 'Dr', 'Col', '']
     }
     dep_vars = ['Survived', 0, 1]
     depth = 10
