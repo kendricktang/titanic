@@ -1,14 +1,11 @@
-only do categorical stuff:
-    for category in categories
-        for value in category:
-            data_subset[value] = [datum in data if datum.category = value]
-        info_gain = calc_info_gain(data_subset)
-        if info_gain is max:
-            keep track of category
+calc info gain
+    discrete
+        just calculate info.
 
-    for value in category:
-        data_subset = [datum in data if datum.category = value]
-        recursion on data_subset
+    continuous
+        for each bi-partition, calculate info.
+        pick best one and return value.
+
 
 node:
     attribute = (var_name, var_type)
@@ -20,7 +17,10 @@ node:
     def distribution(self, data):
         return distribution (as a histogram)
 
-Now I need a way to predict continuous data.
+Now I need a way to predict continuous data -> use piecewise-constant approach.
+    entropy gets replaced with variance.
+    info gain is variance of parent set - sum(weight_i * v_i) for all i in children set
+Look into cross-validation, pruning, etc.
 
 try:
     predict age
@@ -32,3 +32,20 @@ try:
     random forest:
         each tree gets a different subset of data (with replacement!)
         at each step, each tree randomly compares only two of the N attributes to split on.
+
+
+Using only sex and pclass: 0.75598% on Kaggle's test set.
+
+Using sex, pclass, title, embarked (categorical variables): 0.78947% on Kaggle's test set
+
+Using categorical variables (sex, pclass, title, embarked),
+    and continuous variables (sibsp, parch, fare): 0.78469
+    This actually went down... which probably means it is being over fit.
+    I'll fix that soon.
+
+Using categorical variables (sex, pclass, title, embarked),
+    and continuous variables (sibsp, parch, fare, age): 0.78947
+    This is exactly the same as using only sex, pclass, title, and embarked!
+
+Now that I've access to all of the independent variables I am interested in,
+I will begin to work on trimming the tree.

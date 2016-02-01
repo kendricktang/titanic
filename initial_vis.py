@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from csv import reader
 
+
 def plot_bar_set(dataset, subplot, keys=None):
     """
     Given a data dictionary, where each key points to survival data,
@@ -17,20 +18,26 @@ def plot_bar_set(dataset, subplot, keys=None):
         keys = dataset.keys()
 
     for key in keys:
-        # Set x-axis properties
-        ax = plt.subplot(subplot)
-        ticks = np.array((0.125, 0.625))
-        width = 0.25
-        ticklabels = ('died', 'survived')
-        ax.set_xlim(0, 1)
-        ax.set_xticks(ticks + width/2)
-        ax.set_xticklabels(ticklabels, size='large')
-
-        # Set title
-        ax.set_title(str(key))
-
-        ax.bar(ticks, dataset[key], width)
+        plot_bar(dataset, subplot, key)
         subplot += 1
+
+
+def plot_bar(dataset, subplot, key):
+    # Set x-axis properties
+    ax = plt.subplot(subplot)
+    ticks = np.array((0.125, 0.625))
+    width = 0.25
+    ticklabels = ('died', 'survived')
+    ax.set_xlim(0, 1)
+    ax.set_xticks(ticks + width/2)
+    ax.set_xticklabels(ticklabels, size='large')
+
+    # Set title
+    ax.set_title(str(key))
+
+    # Plot bar graph
+    ax.bar(ticks, dataset[key], width)
+
 
 def make_variable_dictionary(variables):
     """
@@ -53,7 +60,6 @@ def add_to_data(data, key, survived):
     data[key][survived] += 1
 
 
-
 def read_csv(filename):
     """
     Reads filename and creates three data dictionaries.
@@ -70,6 +76,7 @@ def read_csv(filename):
     paired_data = {}
     sex_data = {}
     pclass_data = {}
+    survival_data = []
     for line in lines:
         # Get sex, pclass, and survived for each passenger
         sex = line[var_dict['Sex']]
@@ -79,15 +86,28 @@ def read_csv(filename):
         add_to_data(paired_data, (sex, pclass), survived)
         add_to_data(sex_data, sex, survived)
         add_to_data(pclass_data, pclass, survived)
+        survival_data.append(survived)
     f.close()
-    return paired_data, sex_data, pclass_data
+    return paired_data, sex_data, pclass_data, survival_data
 
 
 if __name__ == '__main__':
-    paired_data, sex_data, pclass_data = read_csv('data/train.csv')
+    paired_data, sex_data, pclass_data, survival_data = read_csv(
+            'data/train.csv')
+
+    # Plot just survival data (1x1 plot)
+    num_of_pass = len(survival_data)
+    num_of_survivors = sum(survival_data)
+    survival_data = {'Survival': [num_of_pass, num_of_survivors]}
+    plt.figure(1)
+    subplot = 111
+    plot_bar_set(survival_data, subplot)
+    plt.savefig('plots/survival')
+    plt.clf()
+    plt.close()
 
     # Plot paired data (3x2 plot)
-    plt.figure(1)
+    plt.figure(2)
     plt.subplots_adjust(hspace=0.4)
     subplot = 321
 
@@ -96,23 +116,26 @@ if __name__ == '__main__':
     keys = sorted(keys, key=lambda x: x[1])
 
     plot_bar_set(paired_data, subplot, keys=keys)
+    plt.suptitle('Survival between Sexes and Passenger Classes', size='large')
     plt.savefig('plots/paired')
     plt.clf()
     plt.close()
 
     # Plot sex data (2x1 plot)
-    plt.figure(2)
+    plt.figure(3)
     subplot = 121
     plot_bar_set(sex_data, subplot)
+    plt.suptitle('Survival between Sexes', size='large')
     plt.savefig('plots/sex')
     plt.clf()
     plt.close()
 
     # Plot pclass data (3x1 plot)
-    plt.figure(3)
+    plt.figure(4)
     plt.subplots_adjust(wspace=0.3)
     subplot = 131
     plot_bar_set(pclass_data, subplot)
+    plt.suptitle('Survival between Passenger Classes', size='large')
     plt.savefig('plots/pclass')
     plt.clf()
     plt.close()
