@@ -52,7 +52,7 @@ class Node(object):
             try:
                 return self.children[var_val].predict(datum, var_dict)
             except KeyError:
-                print 'Warning: decision was made early (i.e. not at leaf)'
+                # print 'Warning: decision was made early (i.e. not at leaf)'
                 return self.distribution
         elif var_type == 'continuous':
             if var_val < self.variable[2]:

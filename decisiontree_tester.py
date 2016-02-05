@@ -1,7 +1,9 @@
 import numpy as np
-import numpy as np
+from matplotlib import pyplot as plt
 from make_titanic_tree import construct, simplify_var_dict, write_tree
 from use_titanic_tree import get_data, write_prediction
+from ticket_codes import ticket_codes
+from titles import titles
 
 
 def partition_data(filename, train_size, test_size, replacement):
@@ -26,7 +28,12 @@ def partition_data(filename, train_size, test_size, replacement):
 
     # Use shuffle and partition sampling
     if not replacement:
-        ind = range(len(lines))
+        N = len(lines)
+        if train_size + test_size > N:
+            raise Exception(
+                    ('Train and test sizes are too large.' +
+                    'Train: %d, Test: %d, N: %d' % (train_size, test_size, N)))
+        ind = range(N)
         np.random.shuffle(ind)
         train_ind = ind[:train_size]
         test_ind = ind[train_size: train_size+test_size]
@@ -176,7 +183,7 @@ def eval_tree(trials, filename, train_size, test_size, replacement,
 
 
 if __name__ == '__main__':
-    filename = 'train_titles'
+    filename = 'train_titles_tickets'
     train_size = 600
     test_size = 290
     replacement = False
@@ -184,16 +191,42 @@ if __name__ == '__main__':
     ind_vars = {
         ('Sex', 'categorical'): ['male', 'female'],
         ('Pclass', 'categorical'): ['1', '2', '3'],
+        ('Embarked', 'categorical'): ['S', 'C', 'Q'],
+        ('Title', 'categorical'): titles,
+        ('Ticket_Code', 'categorical'): ticket_codes
     }
     target_var = ['Survived', 'categorical', '0', '1']
     max_depth = 100
-    trials = 100
+    trials = 500
 
     cross_val_error, residual_error = eval_tree(
                 trials, filename, train_size, test_size, replacement,
                 ind_vars, target_var, max_depth)
 
-    print 'For Cross Validation: %f, %d, %f' % (cross_val_error.mean(),
-            test_size, float(cross_val_error.mean()) / test_size)
-    print 'For Evaluating Residuals: %f, %d, %f' % (residual_error.mean(),
-            train_size, float(residual_error.mean()) / train_size)
+    print 'Cross Validation errors: %f, %f' % (
+        cross_val_error.mean() / test_size,
+        cross_val_error.std() / test_size
+    )
+    print 'Residual errors: %f, %f' % (
+        residual_error.mean() / train_size,
+        residual_error.std() / train_size
+    )
+
+    plt.figure()
+    plt.subplot(121)
+    plt.hist(cross_val_error / float(test_size), color='#f46151')
+    plt.xlabel('Cross Validation Error Distribution', size='large')
+    plt.xticks(size=8)
+    plt.yticks(size=8)
+    plt.title('mu=%1.3f, std=%1.3f' % (cross_val_error.mean() / test_size, cross_val_error.std() / test_size), size='large')
+
+    plt.subplot(122)
+    plt.hist(residual_error / float(train_size), color='#f46151')
+    plt.xlabel('Residual Error Distribution', size='large')
+    plt.xticks(size=8)
+    plt.yticks(size=8)
+    plt.title('mu=%1.3f, std=%1.3f' % (residual_error.mean() / train_size, residual_error.std() / train_size), size='large')
+
+    plt.suptitle('Sex, PClass, Embarked, Titles, Ticket Codes, and Mean Squared Error (MSE)', size='large')
+    plt.savefig('plots/error_sex_pclass_embarked_titles_ticketcodes')
+    plt.clf()

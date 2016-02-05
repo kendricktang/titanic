@@ -72,6 +72,13 @@ if __name__ == '__main__':
     ind_vars = {
         ('Sex', 'categorical'): ['male', 'female'],
         ('Pclass', 'categorical'): ['1', '2', '3'],
+        ('Embarked', 'categorical'): ['S', 'C', 'Q'],
+        ('Title', 'categorical'): titles,
+        ('Ticket_Code', 'categorical'): ticket_codes,
+        ('SibSp', 'continuous'): None,
+        ('Parch', 'continuous'): None,
+        ('Fare', 'continuous'): None,
+        ('Ticket_Val', 'continuous'): None,
     }
     target_var = ['Survived', 'categorical', '0', '1']
     max_depth = 100

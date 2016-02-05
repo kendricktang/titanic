@@ -1,291 +1,291 @@
-PassengerId,Survived,Pclass,Title,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
-619,1,2,Miss,Marion Louise Becker,female,4,2,1,230136,39,F4,S
-317,1,2,Mrs,Sinai Kantor,female,24,1,0,244367,26,,S
-21,0,2,Mr,Joseph J Fynney,male,35,0,0,239865,26,,S
-211,0,3,Mr,Ahmed Ali,male,24,0,0,SOTON/O.Q. 3101311,7.05,,S
-136,0,2,Mr,Emile Richard,male,23,0,0,SC/PARIS 2133,15.0458,,C
-13,0,3,Mr,William Henry Saundercock,male,20,0,0,A/5. 2151,8.05,,S
-562,0,3,Mr,Husein Sivic,male,40,0,0,349251,7.8958,,S
-712,0,1,Mr,Herman Klaber,male,,0,0,113028,26.55,C124,S
-774,0,3,Mr,Dibo Elias,male,,0,0,2674,7.225,,C
-37,1,3,Mr,Hanna Mamee,male,,0,0,2677,7.2292,,C
-880,1,1,Mrs,Thomas Potter,female,56,0,1,11767,83.1583,C50,C
-327,0,3,Mr,Johan Hansen Nysveen,male,61,0,0,345364,6.2375,,S
-806,0,3,Mr,Karl Johan Johansson,male,31,0,0,347063,7.775,,S
-364,0,3,Mr,Adola Asim,male,35,0,0,SOTON/O.Q. 3101310,7.05,,S
-484,1,3,Mrs, Turkula,female,63,0,0,4134,9.5875,,S
-673,0,2,Mr,Henry Michael Mitchell,male,70,0,0,C.A. 24580,10.5,,S
-429,0,3,Mr,James Flynn,male,,0,0,364851,7.75,,Q
-61,0,3,Mr,Orsen Sirayanian,male,22,0,0,2669,7.2292,,C
-499,0,1,Mrs,Hudson J C Allison,female,25,1,2,113781,151.55,C22 C26,S
-690,1,1,Miss,Georgette Alexandra Madill,female,15,0,1,24160,211.3375,B5,S
-425,0,3,Mr,Viktor Richard Rosblom,male,18,1,1,370129,20.2125,,S
-548,1,2,Mr,Julian Padro y Manent,male,,0,0,SC/PARIS 2146,13.8625,,C
-745,1,3,Mr,Juho Stranden,male,31,0,0,STON/O 2. 3101288,7.925,,S
-118,0,2,Mr,William John Robert Turpin,male,29,1,0,11668,21,,S
-864,0,3,Miss,Dorothy Edith Sage,female,,8,2,CA. 2343,69.55,,S
-195,1,1,Mrs,James Joseph Brown,female,44,0,0,PC 17610,27.7208,B4,C
-130,0,3,Mr,Johan Ekstrom,male,45,0,0,347061,6.975,,S
-400,1,2,Mrs,William H Trout,female,28,0,0,240929,12.65,,S
-485,1,1,Mr,Dickinson H Bishop,male,25,1,0,11967,91.0792,B49,C
-835,0,3,Mr,Owen George Allum,male,18,0,0,2223,8.3,,S
-777,0,3,Mr,Roger Tobin,male,,0,0,383121,7.75,F38,Q
-887,0,2,Rev,Juozas Montvila,male,27,0,0,211536,13,,S
-809,0,2,Mr,August Meyer,male,39,0,0,248723,13,,S
-559,1,1,Mrs,Emil Taussig,female,39,1,1,110413,79.65,E67,S
-215,0,3,Mr,Philip Kiernan,male,,1,0,367229,7.75,,Q
-310,1,1,Miss,Laura Mabel Francatelli,female,30,0,0,PC 17485,56.9292,E36,C
-629,0,3,Mr,Guentcho Bostandyeff,male,26,0,0,349224,7.8958,,S
-802,1,2,Mrs,Harvey Collyer,female,31,1,1,C.A. 31921,26.25,,S
-546,0,1,Mr,Arthur Ernest Nicholson,male,64,0,0,693,26,,S
-73,0,2,Mr,Ambrose Hood,male,21,0,0,S.O.C. 14879,73.5,,S
-116,0,3,Mr,Edvard Pekoniemi,male,21,0,0,STON/O 2. 3101294,7.925,,S
-285,0,1,Mr,Richard William Smith,male,,0,0,113056,26,A19,S
-333,0,1,Mr,George Edward Graham,male,38,0,1,PC 17582,153.4625,C91,S
-48,1,3,Miss,Bridget O'Driscoll,female,,0,0,14311,7.75,,Q
-403,0,3,Miss,Mari Aina Jussila,female,21,1,0,4137,9.825,,S
-517,1,2,Mrs, Lemore,female,34,0,0,C.A. 34260,10.5,F33,S
-782,1,1,Mrs,Albert Adrian Dick,female,17,1,0,17474,57,B20,S
-622,1,1,Mr,Edwin Nelson Kimball,male,42,1,0,11753,52.5542,D19,S
-70,0,3,Mr,Vincenz Kink,male,26,2,0,315151,8.6625,,S
-190,0,3,Mr,Stjepan Turcin,male,36,0,0,349247,7.8958,,S
-611,0,3,Mrs,Anders Johan Andersson,female,39,1,5,347082,31.275,,S
-755,1,2,Mrs,Samuel Herman,female,48,1,2,220845,65,,S
-208,1,3,Mr,Nassef Cassem Albimona,male,26,0,0,2699,18.7875,,C
-84,0,1,Mr,Francisco M Carrau,male,28,0,0,113059,47.1,,S
-713,1,1,Mr,Elmer Zebley Taylor,male,48,1,0,19996,52,C126,S
-820,0,3,Master,Karl Thorsten Skoog,male,10,3,2,347088,27.9,,S
-353,0,3,Mr,Tannous Elias,male,15,1,1,2695,7.2292,,C
-472,0,3,Mr,Luka Cacic,male,38,0,0,315089,8.6625,,S
-692,1,3,Miss,Manca Karun,female,4,0,1,349256,13.4167,,C
-36,0,1,Mr,Alexander Oskar Holverson,male,42,1,0,113789,52,,S
-221,1,3,Mr,Victor Francis Sunderland,male,16,0,0,SOTON/OQ 392089,8.05,,S
-316,1,3,Miss,Helmina Josefina Nilsson,female,26,0,0,347470,7.8542,,S
-719,0,3,Mr,Michael McEvoy,male,,0,0,36568,15.5,,Q
-396,0,3,Mr,Erik Johansson,male,22,0,0,350052,7.7958,,S
-165,0,3,Master,Eino Viljami Panula,male,1,4,1,3101295,39.6875,,S
-705,0,3,Mr,Henrik Juul Hansen,male,26,1,0,350025,7.8542,,S
-32,1,1,Mrs,William Augustus Spencer,female,,1,0,PC 17569,146.5208,B78,C
-177,0,3,Master,Henry Forbes Lefebre,male,,3,1,4133,25.4667,,S
-538,1,1,Miss,Bertha LeRoy,female,30,0,0,PC 17761,106.425,,C
-520,0,3,Mr,Stefo Pavlovic,male,32,0,0,349242,7.8958,,S
-263,0,1,Mr,Emil Taussig,male,52,1,1,110413,79.65,E67,S
-331,1,3,Miss,Agnes McCoy,female,,2,0,367226,23.25,,Q
-10,1,2,Mrs,Nicholas Nasser,female,14,1,0,237736,30.0708,,C
-879,0,3,Mr,Kristo Laleff,male,,0,0,349217,7.8958,,S
-427,1,2,Mrs,Charles V Clarke,female,28,1,0,2003,26,,S
-231,1,1,Mrs,Henry Birkhardt Harris,female,35,1,0,36973,83.475,C83,S
-179,0,2,Mr,Reginald Hale,male,30,0,0,250653,13,,S
-407,0,3,Mr,Carl/Charles Peter Widegren,male,51,0,0,347064,7.75,,S
-770,0,3,Mr,Daniel Danielsen Gronnestad,male,32,0,0,8471,8.3625,,S
-878,0,3,Mr,Nedelio Petroff,male,19,0,0,349212,7.8958,,S
-693,1,3,Mr,Ali Lam,male,,0,0,1601,56.4958,,S
-437,0,3,Miss,Doolina Margaret Ford,female,21,2,2,W./C. 6608,34.375,,S
-350,0,3,Mr,Jovan Dimic,male,42,0,0,315088,8.6625,,S
-491,0,3,Mr,Konrad Mathias Reiersen Hagland,male,,1,0,65304,19.9667,,S
-445,1,3,Mr,Bernt Johannesen-Bratthammer,male,,0,0,65306,8.1125,,S
-134,1,2,Mrs,Leopold Weisz,female,29,1,0,228414,26,,S
-523,0,3,Mr,Sarkis Lahoud,male,,0,0,2624,7.225,,C
-754,0,3,Mr,Lalio Jonkoff,male,23,0,0,349204,7.8958,,S
-598,0,3,Mr,Alfred Johnson,male,49,0,0,LINE,0,,S
-284,1,3,Mr,Edward Arthur Dorking,male,19,0,0,A/5. 10482,8.05,,S
-178,0,1,Miss,Ann Elizabeth Isham,female,50,0,0,PC 17595,28.7125,C49,C
-826,0,3,Mr,John Flynn,male,,0,0,368323,6.95,,Q
-187,1,3,Mrs,ThomasHannah O'Brien,female,,1,0,370365,15.5,,Q
-129,1,3,Miss,Anna Peter,female,,1,1,2668,22.3583,F E69,C
-857,1,1,Mrs,George Dennick Wick,female,45,1,1,36928,164.8667,,S
-273,1,2,Mrs, Mellinger,female,41,0,1,250644,19.5,,S
-731,1,1,Miss,Elisabeth Walton Allen,female,29,0,0,24160,211.3375,B5,S
-159,0,3,Mr,Mile Smiljanic,male,,0,0,315037,8.6625,,S
-80,1,3,Miss,Elizabeth Dowdell,female,30,0,0,364516,12.475,,S
-821,1,1,Mrs,Charles Melville Hays,female,52,1,1,12749,93.5,B69,S
-97,0,1,Mr,George B Goldschmidt,male,71,0,0,PC 17754,34.6542,A5,C
-322,0,3,Mr,Yoto Danoff,male,27,0,0,349219,7.8958,,S
-336,0,3,Mr,Mitto Denkoff,male,,0,0,349225,7.8958,,S
-363,0,3,Mrs, Barbara,female,45,0,1,2691,14.4542,,C
-433,1,2,Mrs,Charles Alexander Louch,female,42,1,0,SC/AH 3085,26,,S
-867,1,2,Miss,Asuncion Duran y More,female,27,1,0,SC/PARIS 2149,13.8583,,C
-53,1,1,Mrs,Henry Sleeper Harper,female,49,1,0,PC 17572,76.7292,D33,C
-860,0,3,Mr,Raihed Razi,male,,0,0,2629,7.2292,,C
-811,0,3,Mr,William Alexander,male,26,0,0,3474,7.8875,,S
-93,0,1,Mr,Herbert Fuller Chaffee,male,46,1,0,W.E.P. 5734,61.175,E31,S
-702,1,1,Mr,Spencer Victor Silverthorne,male,35,0,0,PC 17475,26.2875,E24,S
-614,0,3,Mr,John Horgan,male,,0,0,370377,7.75,,Q
-474,1,2,Mrs,Amin S Jerwan,female,23,0,0,SC/AH Basle 541,13.7917,D,C
-511,1,3,Mr,Eugene Patrick Daly,male,29,0,0,382651,7.75,,Q
-315,0,2,Mr,Benjamin Hart,male,43,1,1,F.C.C. 13529,26.25,,S
-652,1,2,Miss,Elsie Doling,female,18,0,1,231919,23,,S
-161,0,3,Mr,John Hatfield Cribb,male,44,0,1,371362,16.1,,S
-818,0,2,Mr,Albert Mallet,male,31,1,1,S.C./PARIS 2079,37.0042,,C
-516,0,1,Mr,William Anderson Walker,male,47,0,0,36967,34.0208,D46,S
-387,0,3,Master,Sidney Leonard Goodwin,male,1,5,2,CA 2144,46.9,,S
-828,1,2,Master,Andre Mallet,male,1,0,2,S.C./PARIS 2079,37.0042,,C
-476,0,1,Mr,George Quincy Clifford,male,,0,0,110465,52,A14,S
-635,0,3,Miss,Mabel Skoog,female,9,3,2,347088,27.9,,S
-357,1,1,Miss,Elsie Edith Bowerman,female,22,0,1,113505,55,E33,S
-814,0,3,Miss,Ebba Iris Alfrida Andersson,female,6,4,2,347082,31.275,,S
-462,0,3,Mr,William Morley,male,34,0,0,364506,8.05,,S
-58,0,3,Mr,Mansouer Novel,male,28.5,0,0,2697,7.2292,,C
-865,0,2,Mr,John William Gill,male,24,0,0,233866,13,,S
-549,0,3,Mr,Frank John Goldsmith,male,33,1,1,363291,20.525,,S
-642,1,1,,Mlle. Emma Sagesser,female,24,0,0,PC 17477,69.3,B35,C
-220,0,2,Mr,Walter Harris,male,30,0,0,W/C 14208,10.5,,S
-124,1,2,Miss,Susan Webber,female,32.5,0,0,27267,13,E101,S
-297,0,3,Mr,Mansour Hanna,male,23.5,0,0,2693,7.2292,,C
-252,0,3,Mrs,Wilhelm Strom,female,29,1,1,347054,10.4625,G6,S
-697,0,3,Mr,James Kelly,male,44,0,0,363592,8.05,,S
-464,0,2,Mr,Jacob Christian Milling,male,48,0,0,234360,13,,S
-170,0,3,Mr,Lee Ling,male,28,0,0,1601,56.4958,,S
-314,0,3,Mr,Ignjac Hendekovic,male,28,0,0,349243,7.8958,,S
-191,1,2,Mrs, Pinsky,female,32,0,0,234604,13,,S
-775,1,2,Mrs,Elizabeth Hocking,female,54,1,3,29105,23,,S
-72,0,3,Miss,Lillian Amy Goodwin,female,16,5,2,CA 2144,46.9,,S
-525,0,3,Mr,Fared Kassem,male,,0,0,2700,7.2292,,C
-413,1,1,Miss,Daisy E Minahan,female,33,1,0,19928,90,C78,Q
-522,0,3,Mr,Janko Vovk,male,22,0,0,349252,7.8958,,S
-377,1,3,Miss,Aurora Adelia Landergren,female,22,0,0,C 7077,7.25,,S
-104,0,3,Mr,Gustaf Joel Johansson,male,33,0,0,7540,8.6542,,S
-128,1,3,Mr,Fridtjof Arne Madsen,male,24,0,0,C 17369,7.1417,,S
-519,1,2,Mrs,William AMary Angle,female,36,1,0,226875,26,,S
-247,0,3,Miss,Agda Thorilda Viktoria Lindahl,female,25,0,0,347071,7.775,,S
-543,0,3,Miss,Sigrid Elisabeth Andersson,female,11,4,2,347082,31.275,,S
-492,0,3,Mr,Einar Windelov,male,21,0,0,SOTON/OQ 3101317,7.25,,S
-536,1,2,Miss,Eva Miriam Hart,female,7,0,2,F.C.C. 13529,26.25,,S
-581,1,2,Miss,Julie Rachel Christy,female,25,1,1,237789,30,,S
-92,0,3,Mr,Paul Edvin Andreasson,male,20,0,0,347466,7.8542,,S
-15,0,3,Miss,Hulda Amanda Adolfina Vestrom,female,14,0,0,350406,7.8542,,S
-381,1,1,Miss,Rosalie Bidois,female,42,0,0,PC 17757,227.525,,C
-325,0,3,Mr,George John Sage,male,,8,2,CA. 2343,69.55,,S
-626,0,1,Mr,Frederick Sutton,male,61,0,0,36963,32.3208,D50,S
-459,1,2,Miss,Ellen Toomey,female,50,0,0,F.C.C. 13531,10.5,,S
-373,0,3,Mr,William Thomas Beavan,male,19,0,0,323951,8.05,,S
-552,0,2,Mr,Percival James R Sharp,male,27,0,0,244358,26,,S
-541,1,1,Miss,Harriet R Crosby,female,36,0,2,WE/P 5735,71,B22,S
-783,0,1,Mr,Milton Clyde Long,male,29,0,0,113501,30,D6,S
-542,0,3,Miss,Ingeborg Constanzia Andersson,female,9,4,2,347082,31.275,,S
-610,1,1,Miss,Elizabeth W Shutes,female,40,0,0,PC 17582,153.4625,C125,S
-57,1,2,Miss,Emily Rugg,female,21,0,0,C.A. 31026,10.5,,S
-807,0,1,Mr,Thomas Andrews,male,39,0,0,112050,0,A36,S
-848,0,3,Mr,Marin Markoff,male,35,0,0,349213,7.8958,,C
-382,1,3,Miss,Maria) Nakid,female,1,0,2,2653,15.7417,,C
-12,1,1,Miss,Elizabeth Bonnell,female,58,0,0,113783,26.55,C103,S
-813,0,2,Mr,Richard James Slemen,male,35,0,0,28206,10.5,,S
-311,1,1,Miss,Margaret Bechstein Hays,female,24,0,0,11767,83.1583,C54,C
-448,1,1,Mr,Frederic Kimber Seward,male,34,0,0,113794,26.55,,S
-434,0,3,Mr,Nikolai Erland Kallio,male,17,0,0,STON/O 2. 3101274,7.125,,S
-849,0,2,Rev,John Harper,male,28,0,1,248727,33,,S
-490,1,3,Master,Eden Leslie Coutts,male,9,1,1,C.A. 37671,15.9,,S
-269,1,1,Mrs,William Thompson Graham,female,58,0,1,PC 17582,153.4625,C125,S
-460,0,3,Mr,Maurice O'Connor,male,,0,0,371060,7.75,,Q
-430,1,3,Mr,Berk Pickard,male,32,0,0,SOTON/O.Q. 392078,8.05,E10,S
-198,0,3,Mr,Karl Siegwart Andreas Olsen,male,42,0,1,4579,8.4042,,S
-271,0,1,Mr,Alexander Cairns,male,,0,0,113798,31,,S
-722,0,3,Mr,Svend Lauritz Jensen,male,17,1,0,350048,7.0542,,S
-596,0,3,Mr,Jean Baptiste Van Impe,male,36,1,1,345773,24.15,,S
-216,1,1,Miss,Madeleine Newell,female,31,1,0,35273,113.275,D36,C
-282,0,3,Mr,Nils Johan Goransson Olsson,male,28,0,0,347464,7.8542,,S
-133,0,3,Mrs,Alexander A Robins,female,47,1,0,A/5. 3337,14.5,,S
-234,1,3,Miss,Lillian Gertrud Asplund,female,5,4,2,347077,31.3875,,S
-389,0,3,Mr,Matthew Sadlier,male,,0,0,367655,7.7292,,Q
-583,0,2,Mr,William James Downton,male,54,0,0,28403,26,,S
-167,1,1,Mrs, Chibnall,female,,0,1,113505,55,E33,S
-854,1,1,Miss,Mary Conover Lines,female,16,0,1,PC 17592,39.4,D28,S
-329,1,3,Mrs,Frank John Goldsmith,female,31,1,1,363291,20.525,,S
-328,1,2,Mrs, Ball,female,36,0,0,28551,13,D,S
-149,0,2,Mr,Michel) Navratil,male,36.5,0,2,230080,26,F2,S
-78,0,3,Mr,Rahamin Haim Moutal,male,,0,0,374746,8.05,,S
-837,0,3,Mr,Jakob Pasic,male,21,0,0,315097,8.6625,,S
-623,1,3,Mr,Sahid Nakid,male,20,1,1,2653,15.7417,,C
-856,1,3,Mrs,Sam Aks,female,18,0,1,392091,9.35,,S
-618,0,3,Mrs,William Arthur Lobb,female,26,1,0,A/5. 3336,16.1,,S
-309,0,2,Mr,Samuel Abelson,male,30,1,0,P/PP 3381,24,,C
-786,0,3,Mr,Abraham Harmer,male,25,0,0,374887,7.25,,S
-453,0,1,Mr,Benjamin Laventall Foreman,male,30,0,0,113051,27.75,C111,C
-508,1,1,Mr,George) Bradley,male,,0,0,111427,26.55,,S
-866,1,2,Mrs, Bystrom,female,42,0,0,236852,13,,S
-268,1,3,Mr,Ernst Ulrik Persson,male,25,1,0,347083,7.775,,S
-292,1,1,Mrs,Dickinson H Bishop,female,19,1,0,11967,91.0792,B49,C
-200,0,2,Miss,Henriette) Yrois,female,24,0,0,248747,13,,S
-103,0,1,Mr,Richard Frasar White,male,21,0,1,35281,77.2875,D26,S
-638,0,2,Mr,Harvey Collyer,male,31,1,1,C.A. 31921,26.25,,S
-35,0,1,Mr,Edgar Joseph Meyer,male,28,1,0,PC 17604,82.1708,,C
-505,1,1,Miss,Roberta Maioni,female,16,0,0,110152,86.5,B79,S
-150,0,2,Rev,Thomas Roussel Davids Byles,male,42,0,0,244310,13,,S
-603,0,1,Mr,Charles H Harrington,male,,0,0,113796,42.4,,S
-591,0,3,Mr,Matti Rintamaki,male,35,0,0,STON/O 2. 3101273,7.125,,S
-800,0,3,Mrs,Jean Baptiste Van Impe,female,30,1,1,345773,24.15,,S
-732,0,3,Mr,Houssein G N Hassan,male,11,0,0,2699,18.7875,,C
-789,1,3,Master,Bertram Vere Dean,male,1,1,2,C.A. 2315,20.575,,S
-286,0,3,Mr,Ivan Stankovic,male,33,0,0,349239,8.6625,,C
-737,0,3,Mrs,Edward Ford,female,48,1,3,W./C. 6608,34.375,,S
-34,0,2,Mr,Edward H Wheadon,male,66,0,0,C.A. 24579,10.5,,S
-682,1,1,Mr,Hammad Hassab,male,27,0,0,PC 17572,76.7292,D49,C
-287,1,3,Mr,Theodore de Mulder,male,30,0,0,345774,9.5,,S
-418,1,2,Miss,Lyyli Karoliina Silven,female,18,0,2,250652,13,,S
-480,1,3,Miss,Hildur E Hirvonen,female,2,0,1,3101298,12.2875,,S
-784,0,3,Mr,Andrew G Johnston,male,,1,2,W./C. 6607,23.45,,S
-556,0,1,Mr,George Wright,male,62,0,0,113807,26.55,,S
-646,1,1,Mr,Henry Sleeper Harper,male,48,1,0,PC 17572,76.7292,D33,C
-832,1,2,Master,George Sibley Richards,male,0.83,1,1,29106,18.75,,S
-196,1,1,Miss,Elise Lurette,female,58,0,0,PC 17569,146.5208,B80,C
-876,1,3,Miss,Adele Kiamie Najib,female,15,0,0,2667,7.225,,C
-321,0,3,Mr,Samuel Dennis,male,22,0,0,A/5 21172,7.25,,S
-138,0,1,Mr,Jacques Heath Futrelle,male,37,1,0,113803,53.1,C123,S
-279,0,3,Master,Eric Rice,male,7,4,1,382652,29.125,,Q
-254,0,3,Mr,William Arthur Lobb,male,30,1,0,A/5. 3336,16.1,,S
-139,0,3,Mr,Olaf Elon Osen,male,16,0,0,7534,9.2167,,S
-18,1,2,Mr,Charles Eugene Williams,male,,0,0,244373,13,,S
-825,0,3,Master,Urho Abraham Panula,male,2,4,1,3101295,39.6875,,S
-830,1,1,Mrs,George Nelson Stone,female,62,0,0,113572,80,B28,
-478,0,3,Mr,Lewis Richard Braund,male,29,1,0,3460,7.0458,,S
-237,0,2,Mr,Stephen Hold,male,44,1,0,26707,26,,S
-648,1,1,Col,Oberst Alfons Simonius-Blumer,male,56,0,0,13213,35.5,A26,C
-258,1,1,Miss,Gladys Cherry,female,30,0,0,110152,86.5,B77,S
-409,0,3,Mr,Hans Martin Monsen Birkeland,male,21,0,0,312992,7.775,,S
-4,1,1,Mrs,Jacques Heath Futrelle,female,35,1,0,113803,53.1,C123,S
-45,1,3,Miss,Margaret Delia Devaney,female,19,0,0,330958,7.8792,,Q
-651,0,3,Mr,Mito Mitkoff,male,,0,0,349221,7.8958,,S
-561,0,3,Mr,Thomas Rowan Morrow,male,,0,0,372622,7.75,,Q
-60,0,3,Master,William Frederick Goodwin,male,11,5,2,CA 2144,46.9,,S
-135,0,2,Mr,Samuel James Hayden Sobey,male,25,0,0,C.A. 29178,13,,S
-106,0,3,Mr,Stoytcho Mionoff,male,28,0,0,349207,7.8958,,S
-773,0,2,Mrs, Mack,female,57,0,0,S.O./P.P. 3,10.5,E77,S
-295,0,3,Mr,Ivan Mineff,male,24,0,0,349233,7.8958,,S
-342,1,1,Miss,Alice Elizabeth Fortune,female,24,3,2,19950,263,C23 C25 C27,S
-589,0,3,Mr,Eliezer Gilinski,male,22,0,0,14973,8.05,,S
-226,0,3,Mr,Karl Ivar Sven Berglund,male,22,0,0,PP 4348,9.35,,S
-180,0,3,Mr,Lionel Leonard,male,36,0,0,LINE,0,,S
-703,0,3,Miss,Saiide Barbara,female,18,0,1,2691,14.4542,,C
-831,1,3,Mrs,Antoni Yasbeck,female,15,1,0,2659,14.4542,,C
-836,1,1,Miss,Sara Rebecca Compton,female,39,1,1,PC 17756,83.1583,E49,C
-681,0,3,Miss,Katie Peters,female,,0,0,330935,8.1375,,Q
-482,0,2,Mr,Anthony Wood Frost,male,,0,0,239854,0,,S
-706,0,2,Mr,Henry Samuel) Morley,male,39,0,0,250655,26,,S
-111,0,1,Mr,Walter Chamberlain Porter,male,47,0,0,110465,52,C110,S
-758,0,2,Mr,Percy Andrew Bailey,male,18,0,0,29108,11.5,,S
-840,1,1,Mr,Pierre Marechal,male,,0,0,11774,29.7,C47,C
-71,0,2,Mr,Stephen Curnow Jenkin,male,32,0,0,C.A. 33111,10.5,,S
-477,0,2,Mr,Peter Henry Renouf,male,34,1,0,31027,21,,S
-390,1,2,Miss,Bertha Lehmann,female,17,0,0,SC 1748,12,,C
-306,1,1,Master,Hudson Trevor Allison,male,0.92,1,2,113781,151.55,C22 C26,S
-575,0,3,Mr,Alfred George John Rush,male,16,0,0,A/4. 20589,8.05,,S
-189,0,3,Mr,John Bourke,male,40,1,1,364849,15.5,,Q
-757,0,3,Mr,August Sigfrid Carlsson,male,28,0,0,350042,7.7958,,S
-280,1,3,Mrs,Stanton Abbott,female,35,1,1,C.A. 2673,20.25,,S
-281,0,3,Mr,Frank Duane,male,65,0,0,336439,7.75,,Q
-744,0,3,Mr,Neal McNamee,male,24,1,0,376566,16.1,,S
-101,0,3,Miss,Matilda Petranec,female,28,0,0,349245,7.8958,,S
-319,1,1,Miss,Mary Natalie Wick,female,31,0,2,36928,164.8667,C7,S
-47,0,3,Mr,Denis Lennon,male,,1,0,370371,15.5,,Q
-354,0,3,Mr,Josef Arnold-Franchi,male,25,1,0,349237,17.8,,S
-606,0,3,Mr,Edvard Bengtsson Lindell,male,36,1,0,349910,15.55,,S
-303,0,3,Mr,William Cahoone Johnson,male,19,0,0,LINE,0,,S
-641,0,3,Mr,Hans Peder Jensen,male,20,0,0,350050,7.8542,,S
-714,0,3,Mr,August Viktor Larsson,male,29,0,0,7545,9.4833,,S
-756,1,2,Master,Viljo Hamalainen,male,0.67,1,1,250649,14.5,,S
-233,0,2,Mr,Ernst Adolf Sjostedt,male,59,0,0,237442,13.5,,S
-312,1,1,Miss,Emily Borie Ryerson,female,18,2,2,PC 17608,262.375,B57 B59 B63 B66,C
-863,1,1,Mrs,Frederick Joel Swift,female,48,0,0,17466,25.9292,D17,S
-439,0,1,Mr,Mark Fortune,male,64,1,4,19950,263,C23 C25 C27,S
-550,1,2,Master,John Morgan Davies,male,8,1,1,C.A. 33112,36.75,,S
-877,0,3,Mr,Alfred Ossian Gustafsson,male,20,0,0,7534,9.8458,,S
+PassengerId,Survived,Pclass,Title,Name,Sex,Age,SibSp,Parch,Ticket_Code,Ticket_Val,Fare,Cabin,Embarked
+335,1,1,Mrs,Henry William Frauenthal,female,,1,0,PC,17611,133.65,,S
+800,0,3,Mrs,Jean Baptiste Van Impe,female,30,1,1,,345773,24.15,,S
+842,0,2,Mr,Thomas Charles Mudd,male,16,0,0,S.O./P.P.,3,10.5,,S
+711,1,1,,Mlle. Berthe Antonine) Mayne,female,24,0,0,PC,17482,49.5042,C90,C
+581,1,2,Miss,Julie Rachel Christy,female,25,1,1,,237789,30,,S
+823,0,1,,Jonkheer. John George Reuchlin,male,38,0,0,,19972,0,,S
+715,0,2,Mr,Samuel Greenberg,male,52,0,0,,250647,13,,S
+231,1,1,Mrs,Henry Birkhardt Harris,female,35,1,0,,36973,83.475,C83,S
+550,1,2,Master,John Morgan Davies,male,8,1,1,C.A.,33112,36.75,,S
+173,1,3,Miss,Eleanor Ileen Johnson,female,1,1,1,,347742,11.1333,,S
+203,0,3,Mr,Jakob Alfred Johanson,male,34,0,0,,3101264,6.4958,,S
+724,0,2,Mr,Henry Price Hodges,male,50,0,0,,250643,13,,S
+90,0,3,Mr,Francesco Celotti,male,24,0,0,,343275,8.05,,S
+43,0,3,Mr,Theodor Kraeff,male,,0,0,,349253,7.8958,,C
+296,0,1,Mr,Ervin G Lewy,male,,0,0,PC,17612,27.7208,,C
+42,0,2,Mrs,William John Robert Turpin,female,27,1,0,,11668,21,,S
+869,0,3,Mr,Philemon van Melkebeke,male,,0,0,,345777,9.5,,S
+446,1,1,Master,Washington Dodge,male,4,0,2,,33638,81.8583,A34,S
+183,0,3,Master,Clarence Gustaf Hugo Asplund,male,9,4,2,,347077,31.3875,,S
+878,0,3,Mr,Nedelio Petroff,male,19,0,0,,349212,7.8958,,S
+781,1,3,Miss,Banoura Ayoub,female,13,0,0,,2687,7.2292,,C
+395,1,3,Mrs,Hjalmar Sandstrom,female,24,0,2,PP,9549,16.7,G6,S
+631,1,1,Mr,Algernon Henry Wilson Barkworth,male,80,0,0,,27042,30,A23,S
+425,0,3,Mr,Viktor Richard Rosblom,male,18,1,1,,370129,20.2125,,S
+75,1,3,Mr,Lee Bing,male,32,0,0,,1601,56.4958,,S
+524,1,1,Mrs,Louis Albert Hippach,female,44,0,1,,111361,57.9792,B18,C
+533,0,3,Mr,Joseph Elias,male,17,1,1,,2690,7.2292,,C
+829,1,3,Mr,Thomas Joseph McCormack,male,,0,0,,367228,7.75,,Q
+379,0,3,Mr,Tannous Betros,male,20,0,0,,2648,4.0125,,C
+265,0,3,Miss,Delia Henry,female,,0,0,,382649,7.75,,Q
+450,1,1,,Major. Arthur Godfrey Peuchen,male,52,0,0,,113786,30.5,C104,S
+447,1,2,Miss,Madeleine Violet Mellinger,female,13,0,1,,250644,19.5,,S
+794,0,1,Mr,William Fisher Hoyt,male,,0,0,PC,17600,30.6958,,C
+635,0,3,Miss,Mabel Skoog,female,9,3,2,,347088,27.9,,S
+673,0,2,Mr,Henry Michael Mitchell,male,70,0,0,C.A.,24580,10.5,,S
+119,0,1,Mr,Quigg Edmond Baxter,male,24,0,1,PC,17558,247.5208,B58 B60,C
+207,0,3,Mr,Karl Alfred Backstrom,male,32,1,0,,3101278,15.85,,S
+879,0,3,Mr,Kristo Laleff,male,,0,0,,349217,7.8958,,S
+106,0,3,Mr,Stoytcho Mionoff,male,28,0,0,,349207,7.8958,,S
+32,1,1,Mrs,William Augustus Spencer,female,,1,0,PC,17569,146.5208,B78,C
+770,0,3,Mr,Daniel Danielsen Gronnestad,male,32,0,0,,8471,8.3625,,S
+526,0,3,Mr,James Farrell,male,40.5,0,0,,367232,7.75,,Q
+389,0,3,Mr,Matthew Sadlier,male,,0,0,,367655,7.7292,,Q
+198,0,3,Mr,Karl Siegwart Andreas Olsen,male,42,0,1,,4579,8.4042,,S
+185,1,3,Miss,Luise Gretchen Kink-Heilmann,female,4,0,2,,315153,22.025,,S
+660,0,1,Mr,Arthur Webster Newell,male,58,0,2,,35273,113.275,D48,C
+100,0,2,Mr,Sinai Kantor,male,34,1,0,,244367,26,,S
+64,0,3,Master,Harald Skoog,male,4,3,2,,347088,27.9,,S
+350,0,3,Mr,Jovan Dimic,male,42,0,0,,315088,8.6625,,S
+448,1,1,Mr,Frederic Kimber Seward,male,34,0,0,,113794,26.55,,S
+850,1,1,Mrs,Samuel L Goldenberg,female,,1,0,,17453,89.1042,C92,C
+849,0,2,Rev,John Harper,male,28,0,1,,248727,33,,S
+783,0,1,Mr,Milton Clyde Long,male,29,0,0,,113501,30,D6,S
+875,1,2,Mrs,Samuel Abelson,female,28,1,0,P/PP,3381,24,,C
+537,0,1,,Major. Archibald Willingham Butt,male,45,0,0,,113050,26.55,B38,S
+209,1,3,Miss,Helen Carr,female,16,0,0,,367231,7.75,,Q
+349,1,3,Master,William Loch Coutts,male,3,1,1,C.A.,37671,15.9,,S
+786,0,3,Mr,Abraham Harmer,male,25,0,0,,374887,7.25,,S
+13,0,3,Mr,William Henry Saundercock,male,20,0,0,A/5.,5,8.05,,S
+311,1,1,Miss,Margaret Bechstein Hays,female,24,0,0,,11767,83.1583,C54,C
+742,0,1,Mr,Tyrell William Cavendish,male,36,1,0,,19877,78.85,C46,S
+807,0,1,Mr,Thomas Andrews,male,39,0,0,,112050,0,A36,S
+184,1,2,Master,Richard F Becker,male,1,2,1,,230136,39,F4,S
+418,1,2,Miss,Lyyli Karoliina Silven,female,18,0,2,,250652,13,,S
+83,1,3,Miss,Brigdet Delia McDermott,female,,0,0,,330932,7.7875,,Q
+239,0,2,Mr,Frederick William Pengelly,male,19,0,0,,28665,10.5,,S
+139,0,3,Mr,Olaf Elon Osen,male,16,0,0,,7534,9.2167,,S
+303,0,3,Mr,William Cahoone Johnson,male,19,0,0,LINE,0,0,,S
+720,0,3,Mr,Malkolm Joackim Johnson,male,33,0,0,,347062,7.775,,S
+316,1,3,Miss,Helmina Josefina Nilsson,female,26,0,0,,347470,7.8542,,S
+240,0,2,Mr,George Henry Hunt,male,33,0,0,SCO/W,1585,12.275,,S
+754,0,3,Mr,Lalio Jonkoff,male,23,0,0,,349204,7.8958,,S
+769,0,3,Mr,Daniel J Moran,male,,1,0,,371110,24.15,,Q
+626,0,1,Mr,Frederick Sutton,male,61,0,0,,36963,32.3208,D50,S
+67,1,2,Mrs, Nye,female,29,0,0,C.A.,29395,10.5,F33,S
+94,0,3,Mr,Bertram Frank Dean,male,26,1,2,C.A.,2315,20.575,,S
+847,0,3,Mr,Douglas Bullen Sage,male,,8,2,CA.,2343,69.55,,S
+10,1,2,Mrs,Nicholas Nasser,female,14,1,0,,237736,30.0708,,C
+355,0,3,Mr,Wazli Yousif,male,,0,0,,2647,7.225,,C
+287,1,3,Mr,Theodore de Mulder,male,30,0,0,,345774,9.5,,S
+535,0,3,Miss,Marija Cacic,female,30,0,0,,315084,8.6625,,S
+150,0,2,Rev,Thomas Roussel Davids Byles,male,42,0,0,,244310,13,,S
+180,0,3,Mr,Lionel Leonard,male,36,0,0,LINE,0,0,,S
+470,1,3,Miss,Helene Barbara Baclini,female,0.75,2,1,,2666,19.2583,,C
+481,0,3,Master,Harold Victor Goodwin,male,9,5,2,CA,2144,46.9,,S
+308,1,1,Mrs,Victor de Satode Penasco y Castellana,female,17,1,0,PC,17758,108.9,C65,C
+164,0,3,Mr,Jovo Calic,male,17,0,0,,315093,8.6625,,S
+466,0,3,Mr,Manuel Estanslas Goncalves,male,38,0,0,SOTON/O.Q.,3101306,7.05,,S
+527,1,2,Miss,Lucy Ridsdale,female,50,0,0,W./C.,14258,10.5,,S
+306,1,1,Master,Hudson Trevor Allison,male,0.92,1,2,,113781,151.55,C22 C26,S
+830,1,1,Mrs,George Nelson Stone,female,62,0,0,,113572,80,B28,
+194,1,2,Master,Michel M Navratil,male,3,1,1,,230080,26,F2,S
+70,0,3,Mr,Vincenz Kink,male,26,2,0,,315151,8.6625,,S
+518,0,3,Mr,Patrick Ryan,male,,0,0,,371110,24.15,,Q
+540,1,1,Miss,Hedwig Margaritha Frolicher,female,22,0,2,,13568,49.5,B39,C
+369,1,3,Miss,Annie Jermyn,female,,0,0,,14313,7.75,,Q
+300,1,1,Mrs,James Baxter,female,50,0,1,PC,17558,247.5208,B58 B60,C
+666,0,2,Mr,Lewis Hickman,male,32,2,0,S.O.C.,14879,73.5,,S
+594,0,3,Miss,Mary Bourke,female,,0,2,,364848,7.75,,Q
+236,0,3,Miss,Alice Phoebe Harknett,female,,0,0,W./C.,6609,7.55,,S
+273,1,2,Mrs, Mellinger,female,41,0,1,,250644,19.5,,S
+746,0,1,Col,Edward Gifford Crosby,male,70,1,1,WE/P,5735,71,B22,S
+688,0,3,Mr,Branko Dakic,male,19,0,0,,349228,10.1708,,S
+690,1,1,Miss,Georgette Alexandra Madill,female,15,0,1,,24160,211.3375,B5,S
+298,0,1,Miss,Helen Loraine Allison,female,2,1,2,,113781,151.55,C22 C26,S
+702,1,1,Mr,Spencer Victor Silverthorne,male,35,0,0,PC,17475,26.2875,E24,S
+476,0,1,Mr,George Quincy Clifford,male,,0,0,,110465,52,A14,S
+347,1,2,Miss,Marion Elsie Smith,female,40,0,0,,31418,13,,S
+698,1,3,Miss,Katherine Mullens,female,,0,0,,35852,7.7333,,Q
+146,0,2,Mr,Joseph Charles Nicholls,male,19,1,1,C.A.,33112,36.75,,S
+548,1,2,Mr,Julian Padro y Manent,male,,0,0,SC/PARIS,2146,13.8625,,C
+15,0,3,Miss,Hulda Amanda Adolfina Vestrom,female,14,0,0,,350406,7.8542,,S
+136,0,2,Mr,Emile Richard,male,23,0,0,SC/PARIS,2133,15.0458,,C
+574,1,3,Miss,Mary Kelly,female,,0,0,,14312,7.75,,Q
+105,0,3,Mr,Anders Vilhelm Gustafsson,male,37,2,0,,3101276,7.925,,S
+785,0,3,Mr,William Ali,male,25,0,0,SOTON/O.Q.,3101312,7.05,,S
+92,0,3,Mr,Paul Edvin Andreasson,male,20,0,0,,347466,7.8542,,S
+53,1,1,Mrs,Henry Sleeper Harper,female,49,1,0,PC,17572,76.7292,D33,C
+787,1,3,Miss,Anna Sofia Sjoblom,female,18,0,0,,3101265,7.4958,,S
+814,0,3,Miss,Ebba Iris Alfrida Andersson,female,6,4,2,,347082,31.275,,S
+254,0,3,Mr,William Arthur Lobb,male,30,1,0,A/5.,5,16.1,,S
+520,0,3,Mr,Stefo Pavlovic,male,32,0,0,,349242,7.8958,,S
+815,0,3,Mr,Ernest Portage Tomlin,male,30.5,0,0,,364499,8.05,,S
+234,1,3,Miss,Lillian Gertrud Asplund,female,5,4,2,,347077,31.3875,,S
+658,0,3,Mrs,John Bourke,female,32,1,1,,364849,15.5,,Q
+606,0,3,Mr,Edvard Bengtsson Lindell,male,36,1,0,,349910,15.55,,S
+283,0,3,Mr,Alfons de Pelsmaeker,male,16,0,0,,345778,9.5,,S
+461,1,1,Mr,Harry Anderson,male,48,0,0,,19952,26.55,E12,S
+211,0,3,Mr,Ahmed Ali,male,24,0,0,SOTON/O.Q.,3101311,7.05,,S
+63,0,1,Mr,Henry Birkhardt Harris,male,45,1,0,,36973,83.475,C83,S
+763,1,3,Mr,Hanna Assi Barah,male,20,0,0,,2663,7.2292,,C
+610,1,1,Miss,Elizabeth W Shutes,female,40,0,0,PC,17582,153.4625,C125,S
+669,0,3,Mr,Jacob Cook,male,43,0,0,A/5,5,8.05,,S
+544,1,2,Mr,Edward Beane,male,32,1,0,,2908,26,,S
+644,1,3,Mr,Choong Foo,male,,0,0,,1601,56.4958,,S
+542,0,3,Miss,Ingeborg Constanzia Andersson,female,9,4,2,,347082,31.275,,S
+803,1,1,Master,William Thornton Carter,male,11,1,2,,113760,120,B96 B98,S
+295,0,3,Mr,Ivan Mineff,male,24,0,0,,349233,7.8958,,S
+114,0,3,Miss,Katriina Jussila,female,20,1,0,,4136,9.825,,S
+383,0,3,Mr,Juho Tikkanen,male,32,0,0,STON/O,2,7.925,,S
+555,1,3,Miss,Velin Ohman,female,22,0,0,,347085,7.775,,S
+681,0,3,Miss,Katie Peters,female,,0,0,,330935,8.1375,,Q
+826,0,3,Mr,John Flynn,male,,0,0,,368323,6.95,,Q
+288,0,3,Mr,Penko Naidenoff,male,22,0,0,,349206,7.8958,,S
+821,1,1,Mrs,Charles Melville Hays,female,52,1,1,,12749,93.5,B69,S
+326,1,1,Miss,Marie Grice Young,female,36,0,0,PC,17760,135.6333,C32,C
+56,1,1,Mr,Hugh Woolner,male,,0,0,,19947,35.5,C52,S
+126,1,3,Master,Elias Nicola-Yarred,male,12,1,0,,2651,11.2417,,C
+151,0,2,Rev,Robert James Bateman,male,51,0,0,S.O.P.,1166,12.525,,S
+293,0,2,Mr,Rene Jacques Levy,male,36,0,0,SC/Paris,2163,12.875,D,C
+359,1,3,Miss,Mary McGovern,female,,0,0,,330931,7.8792,,Q
+699,0,1,Mr,John Borland Thayer,male,49,1,1,,17421,110.8833,C68,C
+374,0,1,Mr,Sante Ringhini,male,22,0,0,PC,17760,135.6333,,C
+317,1,2,Mrs,Sinai Kantor,female,24,1,0,,244367,26,,S
+705,0,3,Mr,Henrik Juul Hansen,male,26,1,0,,350025,7.8542,,S
+102,0,3,Mr,Pastcho) Petroff,male,,0,0,,349215,7.8958,,S
+623,1,3,Mr,Sahid Nakid,male,20,1,1,,2653,15.7417,,C
+268,1,3,Mr,Ernst Ulrik Persson,male,25,1,0,,347083,7.775,,S
+252,0,3,Mrs,Wilhelm Strom,female,29,1,1,,347054,10.4625,G6,S
+505,1,1,Miss,Roberta Maioni,female,16,0,0,,110152,86.5,B79,S
+279,0,3,Master,Eric Rice,male,7,4,1,,382652,29.125,,Q
+84,0,1,Mr,Francisco M Carrau,male,28,0,0,,113059,47.1,,S
+107,1,3,Miss,Anna Kristine Salkjelsvik,female,21,0,0,,343120,7.65,,S
+153,0,3,Mr,Alfonzo Meo,male,55.5,0,0,A.5.,5,8.05,,S
+488,0,1,Mr,Edward Austin Kent,male,58,0,0,,11771,29.7,B37,C
+675,0,2,Mr,Ennis Hastings Watson,male,,0,0,,239856,0,,S
+813,0,2,Mr,Richard James Slemen,male,35,0,0,,28206,10.5,,S
+197,0,3,Mr,Robert Mernagh,male,,0,0,,368703,7.75,,Q
+256,1,3,Mrs,Darwis Touma,female,29,0,2,,2650,15.2458,,C
+441,1,2,Mrs,Benjamin Hart,female,45,1,1,F.C.C.,13529,26.25,,S
+876,1,3,Miss,Adele Kiamie Najib,female,15,0,0,,2667,7.225,,C
+743,1,1,Miss,Susan Parker Ryerson,female,21,2,2,PC,17608,262.375,B57 B59 B63 B66,C
+565,0,3,Miss, Meanwell,female,,0,0,SOTON/O.Q.,392087,8.05,,S
+838,0,3,Mr,Maurice Sirota,male,,0,0,,392092,8.05,,S
+222,0,2,Mr,James H Bracken,male,27,0,0,,220367,13,,S
+891,0,3,Mr,Patrick Dooley,male,32,0,0,,370376,7.75,,Q
+179,0,2,Mr,Reginald Hale,male,30,0,0,,250653,13,,S
+508,1,1,Mr,George) Bradley,male,,0,0,,111427,26.55,,S
+196,1,1,Miss,Elise Lurette,female,58,0,0,PC,17569,146.5208,B80,C
+671,1,2,Mrs,Thomas William Solomon Brown,female,40,1,1,,29750,39,,S
+310,1,1,Miss,Laura Mabel Francatelli,female,30,0,0,PC,17485,56.9292,E36,C
+330,1,1,Miss,Jean Gertrude Hippach,female,16,0,1,,111361,57.9792,B18,C
+855,0,2,Mrs,Ernest Courtenay Carter,female,44,1,0,,244252,26,,S
+857,1,1,Mrs,George Dennick Wick,female,45,1,1,,36928,164.8667,,S
+621,0,3,Mr,Antoni Yasbeck,male,27,1,0,,2659,14.4542,,C
+275,1,3,Miss,Hanora Healy,female,,0,0,,370375,7.75,,Q
+356,0,3,Mr,Leo Peter Vanden Steen,male,28,0,0,,345783,9.5,,S
+424,0,3,Mrs,Ernst Gilbert Danbom,female,28,1,1,,347080,14.4,,S
+777,0,3,Mr,Roger Tobin,male,,0,0,,383121,7.75,F38,Q
+468,0,1,Mr,John Montgomery Smart,male,56,0,0,,113792,26.55,,S
+719,0,3,Mr,Michael McEvoy,male,,0,0,,36568,15.5,,Q
+764,1,1,Mrs,William Ernest Carter,female,36,1,2,,113760,120,B96 B98,S
+285,0,1,Mr,Richard William Smith,male,,0,0,,113056,26,A19,S
+858,1,1,Mr,Peter Denis Daly,male,51,0,0,,113055,26.55,E17,S
+76,0,3,Mr,Sigurd Hansen Moen,male,25,0,0,,348123,7.65,F G73,S
+649,0,3,Mr,Edward Willey,male,,0,0,S.O./P.P.,751,7.55,,S
+498,0,3,Mr,Frederick William Shellard,male,,0,0,C.A.,6212,15.1,,S
+677,0,3,Mr,Frederick Charles Sawyer,male,24.5,0,0,,342826,8.05,,S
+116,0,3,Mr,Edvard Pekoniemi,male,21,0,0,STON/O,2,7.925,,S
+854,1,1,Miss,Mary Conover Lines,female,16,0,1,PC,17592,39.4,D28,S
+708,1,1,Mr,Edward Pennington Calderhead,male,42,0,0,PC,17476,26.2875,E24,S
+636,1,2,Miss,Mary Davis,female,28,0,0,,237668,13,,S
+216,1,1,Miss,Madeleine Newell,female,31,1,0,,35273,113.275,D36,C
+393,0,3,Mr,Johan Birger Gustafsson,male,28,2,0,,3101277,7.925,,S
+399,0,2,Dr,Alfred Pain,male,23,0,0,,244278,10.5,,S
+670,1,1,Mrs,Elmer Zebley Taylor,female,,1,0,,19996,52,C126,S
+333,0,1,Mr,George Edward Graham,male,38,0,1,PC,17582,153.4625,C91,S
+775,1,2,Mrs,Elizabeth Hocking,female,54,1,3,,29105,23,,S
+739,0,3,Mr,Kanio Ivanoff,male,,0,0,,349201,7.8958,,S
+35,0,1,Mr,Edgar Joseph Meyer,male,28,1,0,PC,17604,82.1708,,C
+469,0,3,Mr,James Scanlan,male,,0,0,,36209,7.725,,Q
+103,0,1,Mr,Richard Frasar White,male,21,0,1,,35281,77.2875,D26,S
+51,0,3,Master,Juha Niilo Panula,male,7,4,1,,3101295,39.6875,,S
+315,0,2,Mr,Benjamin Hart,male,43,1,1,F.C.C.,13529,26.25,,S
+802,1,2,Mrs,Harvey Collyer,female,31,1,1,C.A.,31921,26.25,,S
+144,0,3,Mr,Jeremiah Burke,male,19,0,0,,365222,6.75,,Q
+177,0,3,Master,Henry Forbes Lefebre,male,,3,1,,4133,25.4667,,S
+572,1,1,Mrs,Edward Dale Appleton,female,53,2,0,,11769,51.4792,C101,S
+434,0,3,Mr,Nikolai Erland Kallio,male,17,0,0,STON/O,2,7.125,,S
+157,1,3,Miss,Katherine Gilnagh,female,16,0,0,,35851,7.7333,,Q
+387,0,3,Master,Sidney Leonard Goodwin,male,1,5,2,CA,2144,46.9,,S
+755,1,2,Mrs,Samuel Herman,female,48,1,2,,220845,65,,S
+776,0,3,Mr,Pehr Fabian Oliver Malkolm Myhrman,male,18,0,0,,347078,7.75,,S
+14,0,3,Mr,Anders Johan Andersson,male,39,1,5,,347082,31.275,,S
+771,0,3,Mr,Rene Aime Lievens,male,24,0,0,,345781,9.5,,S
+741,1,1,Mr,Walter James Hawksford,male,,0,0,,16988,30,D45,S
+600,1,1,Mr,Cosmo Edmund) Duff Gordon,male,49,1,0,PC,17485,56.9292,A20,C
+132,0,3,Mr,Domingos Fernandeo Coelho,male,20,0,0,SOTON/O.Q.,3101307,7.05,,S
+665,1,3,Mr,Eino William Lindqvist,male,20,1,0,STON/O,2,7.925,,S
+122,0,3,Mr,Leonard Charles Moore,male,,0,0,A4.,4,8.05,,S
+710,1,3,Master,Halim Gonios) Moubarek,male,,1,1,,2661,15.2458,,C
+238,1,2,Miss,Marjorie Collyer,female,8,0,2,C.A.,31921,26.25,,S
+697,0,3,Mr,James Kelly,male,44,0,0,,363592,8.05,,S
+439,0,1,Mr,Mark Fortune,male,64,1,4,,19950,263,C23 C25 C27,S
+531,1,2,Miss,Phyllis May Quick,female,2,1,1,,26360,26,,S
+354,0,3,Mr,Josef Arnold-Franchi,male,25,1,0,,349237,17.8,,S
+344,0,2,Mr,Charles Frederick Waddington Sedgwick,male,25,0,0,,244361,13,,S
+646,1,1,Mr,Henry Sleeper Harper,male,48,1,0,PC,17572,76.7292,D33,C
+485,1,1,Mr,Dickinson H Bishop,male,25,1,0,,11967,91.0792,B49,C
+31,0,1,,Don. Manuel E Uruchurtu,male,40,0,0,PC,17601,27.7208,,C
+534,1,3,Mrs,Catherine Peter,female,,0,2,,2668,22.3583,,C
+792,0,2,Mr,Alfred Gaskell,male,16,0,0,,239865,26,,S
+422,0,3,Mr,David Charters,male,21,0,0,A/5.,5,7.7333,,Q
+883,0,3,Miss,Gerda Ulrika Dahlberg,female,22,0,0,,7552,10.5167,,S
+529,0,3,Mr,Johan Werner Salonen,male,39,0,0,,3101296,7.925,,S
+392,1,3,Mr,Carl Olof Jansson,male,21,0,0,,350034,7.7958,,S
+221,1,3,Mr,Victor Francis Sunderland,male,16,0,0,SOTON/OQ,392089,8.05,,S
+780,1,1,Mrs,Edward Scott Robert,female,43,0,1,,24160,211.3375,B3,S
+882,0,3,Mr,Johann Markun,male,33,0,0,,349257,7.8958,,S
+819,0,3,Mr,John Fredrik Alexander Holm,male,43,0,0,C,7075,6.45,,S
+74,0,3,Mr,Apostolos Chronopoulos,male,26,1,0,,2680,14.4542,,C
+324,1,2,Mrs,Albert Francis Caldwell,female,22,1,1,,248738,29,,S
+471,0,3,Mr,Arthur Keefe,male,,0,0,,323592,7.25,,S
+206,0,3,Miss,Telma Matilda Strom,female,2,0,1,,347054,10.4625,G6,S
+396,0,3,Mr,Erik Johansson,male,22,0,0,,350052,7.7958,,S
+463,0,1,Mr,Arthur H Gee,male,47,0,0,,111320,38.5,E63,S
+499,0,1,Mrs,Hudson J C Allison,female,25,1,2,,113781,151.55,C22 C26,S
+734,0,2,Mr,William John Berriman,male,23,0,0,,28425,13,,S
+27,0,3,Mr,Farred Chehab Emir,male,,0,0,,2631,7.225,,C
+480,1,3,Miss,Hildur E Hirvonen,female,2,0,1,,3101298,12.2875,,S
+629,0,3,Mr,Guentcho Bostandyeff,male,26,0,0,,349224,7.8958,,S
+415,1,3,Mr,Johan Julian Sundman,male,44,0,0,STON/O,2,7.925,,S
+269,1,1,Mrs,William Thompson Graham,female,58,0,1,PC,17582,153.4625,C125,S
+6,0,3,Mr,James Moran,male,,0,0,,330877,8.4583,,Q
+23,1,3,Miss,Anna McGowan,female,15,0,0,,330923,8.0292,,Q
+804,1,3,Master,Assad Alexander Thomas,male,0.42,0,1,,2625,8.5167,,C
+318,0,2,Dr,Ernest Moraweck,male,54,0,0,,29011,14,,S
+797,1,1,Dr,Alice Leader,female,49,0,0,,17465,25.9292,D17,S
+822,1,3,Mr,Nikola Lulic,male,27,0,0,,315098,8.6625,,S
+880,1,1,Mrs,Thomas Potter,female,56,0,1,,11767,83.1583,C50,C
+142,1,3,Miss,Anna Sofia Nysten,female,22,0,0,,347081,7.75,,S
+47,0,3,Mr,Denis Lennon,male,,1,0,,370371,15.5,,Q
+609,1,2,Mrs,Joseph Laroche,female,22,1,2,SC/Paris,2123,41.5792,,C
+37,1,3,Mr,Hanna Mamee,male,,0,0,,2677,7.2292,,C
+11,1,3,Miss,Marguerite Rut Sandstrom,female,4,1,1,PP,9549,16.7,G6,S
+532,0,3,Mr,Nakli Toufik,male,,0,0,,2641,7.2292,,C
+887,0,2,Rev,Juozas Montvila,male,27,0,0,,211536,13,,S
+133,0,3,Mrs,Alexander A Robins,female,47,1,0,A/5.,5,14.5,,S
+473,1,2,Mrs,Edwy Arthur West,female,33,1,2,C.A.,34651,27.75,,S
+750,0,3,Mr,Michael Connaghton,male,31,0,0,,335097,7.75,,Q
+39,0,3,Miss,Augusta Maria Vander Planke,female,18,2,0,,345764,18,,S
+661,1,1,Dr,Henry William Frauenthal,male,50,2,0,PC,17611,133.65,,S
+3,1,3,Miss,Laina Heikkinen,female,26,0,0,STON/O2.,2,7.925,,S
+808,0,3,Miss,Ellen Natalia Pettersson,female,18,0,0,,347087,7.775,,S
+48,1,3,Miss,Bridget O'Driscoll,female,,0,0,,14311,7.75,,Q
+861,0,3,Mr,Claus Peter Hansen,male,41,2,0,,350026,14.1083,,S
+799,0,3,Mr,Yousseff Ibrahim Shawah,male,30,0,0,,2685,7.2292,,C
+340,0,1,Mr,Stephen Weart Blackwell,male,45,0,0,,113784,35.5,T,S
+61,0,3,Mr,Orsen Sirayanian,male,22,0,0,,2669,7.2292,,C
+752,1,3,Master,Meier Moor,male,6,0,1,,392096,12.475,E121,S
